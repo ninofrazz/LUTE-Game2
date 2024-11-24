@@ -30,6 +30,7 @@ public class Group : Node
     public void SetGroup(Group existingGroup)
     {
         // Assign values from the existing group
+        _NodeRect = existingGroup.nodeRect;
         groupedNodes = existingGroup.GroupedNodes;
         setNodesToComplete = existingGroup.SetNodesToComplete;
         nodesToComplete = existingGroup.NodesToComplete;

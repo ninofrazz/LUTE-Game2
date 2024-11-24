@@ -8,6 +8,8 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARFoundation.Samples;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 [OrderInfo("XR",
               "PlaceObjectOnPlane",
@@ -27,6 +29,9 @@ public class PlaceObjectXR : Order
     [SerializeField]
 
     public bool automaticallyPlaceObject = true;
+
+
+ 
 
     [SerializeField]
     public bool rotateable = true;
@@ -63,6 +68,37 @@ public class PlaceObjectXR : Order
     ARPlaneManager planeManager;
 
  
+    private void OnObjectSpawned(GameObject obj)
+    {
+       
+        Debug.Log("Object spawned");
+
+        //get the objectspawner from teh XR game object and remove the object from the object manager
+        ObjectSpawner objectSpawner = GameObject.Find("XR").GetComponentInChildren<ObjectSpawner>();
+        objectSpawner.objectSpawned -= OnObjectSpawned;
+
+        //get the XRGrabInteractable component of the object
+        XRGrabInteractable grabInteractable = obj.GetComponentInChildren<XRGrabInteractable>();
+
+        //set the track position, track rotation and track scale to the rotateable , moveable and scaleable variables
+        grabInteractable.trackPosition = moveable;
+        grabInteractable.trackRotation = rotateable;
+        grabInteractable.trackScale = scaleable;
+
+       //remove the object from the object spawner objectPrefabs list
+       objectSpawner.objectPrefabs.Remove(m_PrefabToPlace);
+
+        ObjectSpawner.IsCurrentlyPlacingObject = false;
+
+
+        //add the object to the object manager
+        XRObjectManager.AddObject(m_ObjectName, obj);
+
+
+        Continue();
+
+       
+    }
 
 
     public override void OnEnter()
@@ -76,6 +112,15 @@ public class PlaceObjectXR : Order
         Debug.Log(planeManager.gameObject);
 
       
+        //get the objectsopawner script in the children of the XR game object and subscribe to the event
+        ObjectSpawner objectSpawner = arObjectInstance.GetComponentInChildren<ObjectSpawner>();
+        objectSpawner.objectSpawned += OnObjectSpawned;
+
+        //add the object to the object spawner objectPrefabs list
+        objectSpawner.objectPrefabs.Add(m_PrefabToPlace);
+
+        ObjectSpawner.IsCurrentlyPlacingObject = true;
+
 
         //register evenr for plane detection
         if (raycastHitEvent == null || m_PrefabToPlace == null)
@@ -92,8 +137,8 @@ public class PlaceObjectXR : Order
             }
             else
             {
-                raycastHitEvent.eventRaised += MoveObject;
-                raycastHitEvent.eventRaised += PlaceObjectAt;
+                //raycastHitEvent.eventRaised += MoveObject;
+                //raycastHitEvent.eventRaised += PlaceObjectAt;
             }
         }
         
@@ -168,24 +213,24 @@ public class PlaceObjectXR : Order
         //check for rotating object using touch and two fingers
         if (rotateable)
         {
-            if (Input.touchCount == 2)
-            {
-                Touch touchZero = Input.GetTouch(0);
-                Touch touchOne = Input.GetTouch(1);
+            //if (Input.touchCount == 2)
+            //{
+            //    Touch touchZero = Input.GetTouch(0);
+            //    Touch touchOne = Input.GetTouch(1);
 
-                Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-                Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+            //    Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            //    Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-                float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-                float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
+            //    float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            //    float currentMagnitude = (touchZero.position - touchOne.position).magnitude;
 
-                float difference = currentMagnitude - prevMagnitude;
+            //    float difference = currentMagnitude - prevMagnitude;
 
-                if (m_SpawnedObject != null)
-                {
-                    m_SpawnedObject.transform.Rotate(Vector3.up, difference * 10);
-                }
-            }
+            //    if (m_SpawnedObject != null)
+            //    {
+            //        m_SpawnedObject.transform.Rotate(Vector3.up, difference * 10);
+            //    }
+            //}
         
         }
     }

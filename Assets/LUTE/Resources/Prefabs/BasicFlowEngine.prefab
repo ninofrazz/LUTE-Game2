@@ -49,7 +49,7 @@ MonoBehaviour:
   storyText: {fileID: 0}
   groups: []
   description: 
-  hideComponents: 1
+  hideComponents: 0
   localizationId: 
   selectedOrders: []
   selectedNodes:

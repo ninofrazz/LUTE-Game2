@@ -16,6 +16,8 @@ public class TextVariationHandler
             Conditional
         }
 
+        public Node parentNode = null;
+
         public VaryType type = VaryType.Sequence;
         public string entire = string.Empty;
         public List<string> elements = new List<string>();
@@ -34,16 +36,49 @@ public class TextVariationHandler
                 string cleanVarName = variableName.TrimStart('=');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 // Use better method
 >>>>>>> parent of 271f220d (update: finalising text tag system)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
                 var engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
 
                 var variable = engine?.GetVariable(cleanVarName);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
                 return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
 =======
+=======
+                BasicFlowEngine engine = null;
+
+                if (parentNode != null)
+                {
+                    engine = parentNode.GetEngine();
+                }
+                else
+                {
+                    engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
+                }
+
+                var variable = engine?.GetVariable(cleanVarName);
+
+                if (variable == null)
+                {
+                    return string.Empty;
+                }
+
+>>>>>>> parent of 7902ba09 (Initial Commit)
                 switch (variable.GetType())
                 {
                     case Type t when t == typeof(StringVariable):
@@ -74,6 +109,15 @@ public class TextVariationHandler
 
                 return variable != null && compareObj != null && variable.Evaluate(operatorType, compareObj)
 >>>>>>> parent of 271f220d (update: finalising text tag system)
+=======
+                return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+                return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+                return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
                     ? trueResult
                     : falseResult;
             }
@@ -241,6 +285,9 @@ public class TextVariationHandler
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
     private static void ParseOperator(string input, out string variableName, out ComparisonOperator op)
     {
@@ -276,8 +323,18 @@ public class TextVariationHandler
         }
     }
 
+<<<<<<< HEAD
 >>>>>>> parent of 271f220d (update: finalising text tag system)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
+=======
+>>>>>>> parent of 8d8b2eef (feat: Added operators and various types)
     public static string SelectVariations(string input, int parentHash = 0)
+=======
+    public static string SelectVariations(string input, Node parentNode = null, int parentHash = 0)
+>>>>>>> parent of 7902ba09 (Initial Commit)
     {
         List<Section> sections = new List<Section>();
         bool foundSections = TokeniseVarySections(input, sections);
@@ -294,6 +351,12 @@ public class TextVariationHandler
         for (int i = 0; i < sections.Count; i++)
         {
             var curSection = sections[i];
+
+            if (parentNode != null)
+            {
+                curSection.parentNode = parentNode;
+            }
+
             string selected = string.Empty;
 
             if (curSection.type == Section.VaryType.Conditional)
@@ -322,7 +385,7 @@ public class TextVariationHandler
                 hashedSections[key] = index;
             }
 
-            selected = SelectVariations(selected, parentHash);
+            selected = SelectVariations(selected, null, parentHash);
             sb.Replace(curSection.entire, selected);
         }
         return sb.ToString();
