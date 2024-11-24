@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,53 +22,22 @@ public class TextVariationHandler
 
         // Conditional properties
         public string variableName = string.Empty;
-        public ComparisonOperator operatorType = ComparisonOperator.Equals;
         public string compareValue = string.Empty;
         public string trueResult = string.Empty;
         public string falseResult = string.Empty;
-        public object compareObj = null;
 
         public string Select(ref int index)
         {
             if (type == VaryType.Conditional)
             {
-                // Remove the operator prefix from variable name before finding it
-                string cleanVarName = variableName.TrimStart('=', '!', '>', '<');
+                // Remove the '=' prefix from variable name before finding it
+                string cleanVarName = variableName.TrimStart('=');
 
-                // Use better method
                 var engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
 
                 var variable = engine?.GetVariable(cleanVarName);
 
-                switch (variable.GetType())
-                {
-                    case Type t when t == typeof(StringVariable):
-                        compareObj = compareValue;
-                        break;
-                    case Type t when t == typeof(IntegerVariable):
-                        if (int.TryParse(compareValue, out int intResult))
-                        {
-                            compareObj = intResult;
-                        }
-                        break;
-                    case Type t when t == typeof(FloatVariable):
-                        if (float.TryParse(compareValue, out float floatResult))
-                        {
-                            compareObj = floatResult;
-                        }
-                        break;
-                    case Type t when t == typeof(BooleanVariable):
-                        if (bool.TryParse(compareValue, out bool boolResult))
-                        {
-                            compareObj = boolResult;
-                        }
-                        break;
-                    default:
-                        compareObj = compareValue;
-                        break;
-                }
-
-                return variable != null && compareObj != null && variable.Evaluate(operatorType, compareObj)
+                return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
                     ? trueResult
                     : falseResult;
             }
@@ -219,12 +187,8 @@ public class TextVariationHandler
         string[] conditionParts = mainParts[0].Trim().Split(',');
         if (conditionParts.Length != 2) return false;
 
-        // Parse the variable part to determine operator
-        string varPart = conditionParts[0].Trim();
-        ParseOperator(varPart, out string cleanVarName, out ComparisonOperator op);
-
-        section.variableName = cleanVarName;
-        section.operatorType = op;
+        // Store the variable name as is (with potential '=' prefix)
+        section.variableName = conditionParts[0].Trim();
         section.compareValue = conditionParts[1].Trim();
 
         // Parse results part
@@ -238,40 +202,6 @@ public class TextVariationHandler
         section.entire = input.Substring(startIndex, endIndex - startIndex + 1);
 
         return true;
-    }
-
-    private static void ParseOperator(string input, out string variableName, out ComparisonOperator op)
-    {
-        if (input.StartsWith("!="))
-        {
-            op = ComparisonOperator.NotEquals;
-            variableName = input.Substring(2);
-        }
-        else if (input.StartsWith(">="))
-        {
-            op = ComparisonOperator.GreaterThanOrEquals;
-            variableName = input.Substring(2);
-        }
-        else if (input.StartsWith("<="))
-        {
-            op = ComparisonOperator.LessThanOrEquals;
-            variableName = input.Substring(2);
-        }
-        else if (input.StartsWith(">"))
-        {
-            op = ComparisonOperator.GreaterThan;
-            variableName = input.Substring(1);
-        }
-        else if (input.StartsWith("<"))
-        {
-            op = ComparisonOperator.LessThan;
-            variableName = input.Substring(1);
-        }
-        else
-        {
-            op = ComparisonOperator.Equals;
-            variableName = input.TrimStart('=');
-        }
     }
 
     public static string SelectVariations(string input, int parentHash = 0)
