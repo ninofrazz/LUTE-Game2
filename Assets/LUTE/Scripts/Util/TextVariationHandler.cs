@@ -33,11 +33,47 @@ public class TextVariationHandler
                 // Remove the '=' prefix from variable name before finding it
                 string cleanVarName = variableName.TrimStart('=');
 
+<<<<<<< HEAD
+=======
+                // Use better method
+>>>>>>> parent of 271f220d (update: finalising text tag system)
                 var engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
 
                 var variable = engine?.GetVariable(cleanVarName);
 
+<<<<<<< HEAD
                 return variable != null && variable.Evaluate(ComparisonOperator.Equals, compareValue)
+=======
+                switch (variable.GetType())
+                {
+                    case Type t when t == typeof(StringVariable):
+                        compareObj = compareValue;
+                        break;
+                    case Type t when t == typeof(IntegerVariable):
+                        if (int.TryParse(compareValue, out int intResult))
+                        {
+                            compareObj = intResult;
+                        }
+                        break;
+                    case Type t when t == typeof(FloatVariable):
+                        if (float.TryParse(compareValue, out float floatResult))
+                        {
+                            compareObj = floatResult;
+                        }
+                        break;
+                    case Type t when t == typeof(BooleanVariable):
+                        if (bool.TryParse(compareValue, out bool boolResult))
+                        {
+                            compareObj = boolResult;
+                        }
+                        break;
+                    default:
+                        compareObj = compareValue;
+                        break;
+                }
+
+                return variable != null && compareObj != null && variable.Evaluate(operatorType, compareObj)
+>>>>>>> parent of 271f220d (update: finalising text tag system)
                     ? trueResult
                     : falseResult;
             }
@@ -204,6 +240,43 @@ public class TextVariationHandler
         return true;
     }
 
+<<<<<<< HEAD
+=======
+    private static void ParseOperator(string input, out string variableName, out ComparisonOperator op)
+    {
+        if (input.StartsWith("!="))
+        {
+            op = ComparisonOperator.NotEquals;
+            variableName = input.Substring(2);
+        }
+        else if (input.StartsWith(">="))
+        {
+            op = ComparisonOperator.GreaterThanOrEquals;
+            variableName = input.Substring(2);
+        }
+        else if (input.StartsWith("<="))
+        {
+            op = ComparisonOperator.LessThanOrEquals;
+            variableName = input.Substring(2);
+        }
+        else if (input.StartsWith(">"))
+        {
+            op = ComparisonOperator.GreaterThan;
+            variableName = input.Substring(1);
+        }
+        else if (input.StartsWith("<"))
+        {
+            op = ComparisonOperator.LessThan;
+            variableName = input.Substring(1);
+        }
+        else
+        {
+            op = ComparisonOperator.Equals;
+            variableName = input.TrimStart('=');
+        }
+    }
+
+>>>>>>> parent of 271f220d (update: finalising text tag system)
     public static string SelectVariations(string input, int parentHash = 0)
     {
         List<Section> sections = new List<Section>();
