@@ -3285,8 +3285,15 @@ MonoBehaviour:
   hideComponents: 0
   localizationId: 
   selectedOrders: []
-  selectedNodes: []
-  nodeViewHeight: 406
+  selectedNodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nodeViewHeight: 200
   hideOrders: []
   variables: []
   variablesExpanded: 1
@@ -3300,10 +3307,14 @@ MonoBehaviour:
   showAnnotations: 1
   labelTint: {r: 0.9966797, g: 0.7216981, b: 1, a: 1}
   zoom: 1
+<<<<<<< HEAD
   scrollPos: {x: -59.701294, y: 226.8145}
   version: 1
   sidesOfDie: 6
   postcards: []
+=======
+  scrollPos: {x: -24919.475, y: -24721.137}
+>>>>>>> parent of d4a059f6 (Merge branch 'Cookbook_stuff')
   groupnames: []
 --- !u!1 &1641845851611558073
 GameObject:
@@ -9597,7 +9608,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1796025357
-  m_SortingLayer: 0
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ccc44370056c7b546b898b18f649fa12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

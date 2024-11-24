@@ -17,8 +17,6 @@ public class TextVariationHandler
             Conditional
         }
 
-        public Node parentNode = null;
-
         public VaryType type = VaryType.Sequence;
         public string entire = string.Empty;
         public List<string> elements = new List<string>();
@@ -38,23 +36,10 @@ public class TextVariationHandler
                 // Remove the operator prefix from variable name before finding it
                 string cleanVarName = variableName.TrimStart('=', '!', '>', '<');
 
-                BasicFlowEngine engine = null;
-
-                if (parentNode != null)
-                {
-                    engine = parentNode.GetEngine();
-                }
-                else
-                {
-                    engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
-                }
+                // Use better method
+                var engine = GameObject.FindObjectsOfType<BasicFlowEngine>().ToList().Where(x => !x.gameObject.name.Contains("GlobalVariablesEngine")).FirstOrDefault();
 
                 var variable = engine?.GetVariable(cleanVarName);
-
-                if (variable == null)
-                {
-                    return string.Empty;
-                }
 
                 switch (variable.GetType())
                 {
@@ -289,7 +274,7 @@ public class TextVariationHandler
         }
     }
 
-    public static string SelectVariations(string input, Node parentNode = null, int parentHash = 0)
+    public static string SelectVariations(string input, int parentHash = 0)
     {
         List<Section> sections = new List<Section>();
         bool foundSections = TokeniseVarySections(input, sections);
@@ -306,12 +291,6 @@ public class TextVariationHandler
         for (int i = 0; i < sections.Count; i++)
         {
             var curSection = sections[i];
-
-            if (parentNode != null)
-            {
-                curSection.parentNode = parentNode;
-            }
-
             string selected = string.Empty;
 
             if (curSection.type == Section.VaryType.Conditional)
@@ -340,7 +319,7 @@ public class TextVariationHandler
                 hashedSections[key] = index;
             }
 
-            selected = SelectVariations(selected, null, parentHash);
+            selected = SelectVariations(selected, parentHash);
             sb.Replace(curSection.entire, selected);
         }
         return sb.ToString();

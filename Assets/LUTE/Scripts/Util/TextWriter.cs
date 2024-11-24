@@ -200,7 +200,7 @@ public class TextWriter : MonoBehaviour, IDialoguenputListener
 
         NotifyStart(clip);
 
-        string tokenText = TextVariationHandler.SelectVariations(text, parentNode);
+        string tokenText = TextVariationHandler.SelectVariations(text);
 
         if (waitForInput)
         {

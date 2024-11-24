@@ -628,11 +628,7 @@ public class GraphWindow : EventWindow
         if (GUI.Button(buttonRect, "Create Blueprint"))
         {
             if (!string.IsNullOrEmpty(blueprintName))
-            {
-                // Replace any empty spaces in the blueprint name with underscores
-                blueprintName = blueprintName.Replace(" ", "_");
                 CreateBlueprint(blueprintName);
-            }
         }
     }
 
@@ -3527,27 +3523,9 @@ public class GraphWindow : EventWindow
 
     public void AddBlueprint(List<Node> BPNodes, List<Group> BPGroups, BasicFlowEngine engine, BasicFlowEngine originalEngine = null)
     {
-        float xOffset = 0;
-        float yOffset = 0;
-
-        bool firstNode = false;
-
         //copy any relevant variables and set the values to the new engine
         foreach (var node in BPNodes)
         {
-            if (firstNode == false)
-            {
-                xOffset = node._NodeRect.x + 150; //add a small offset to avoid covering existing nodes
-                yOffset = node._NodeRect.y;
-                firstNode = true;
-            }
-
-            //subtract the offset from the node position
-            Rect nodeRect = node._NodeRect;
-            nodeRect.x -= xOffset;
-            nodeRect.y -= yOffset;
-            node._NodeRect = nodeRect;
-
             if (node.NodeLocation != null)
             {
                 var newLocVar = engine.AddVariable(node.NodeLocation.GetType(), node.NodeLocation.Key);

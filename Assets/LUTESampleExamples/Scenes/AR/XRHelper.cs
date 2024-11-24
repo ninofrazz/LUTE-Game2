@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.Management;
 
 public class XRHelper : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class XRHelper : MonoBehaviour
 
     private static bool isInitialised = false;
 
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,41 +20,20 @@ public class XRHelper : MonoBehaviour
 
         //xrRig = GameObject.Find("XR Origin (XR Rig)");
 
-        //deactivate the two objects
+       //deactivate the two objects
         //xrRig.SetActive(false);
         //arSession.SetActive(false);
 
-        //StartCoroutine(disableafter(.5f));
+       //StartCoroutine(disableafter(.5f));
 
     }
 
     public static bool initiliaseXR()
     {
 
-        if (isInitialised)
+        if(isInitialised)
         {
             return false;
-        }
-
-        if (XRGeneralSettings.Instance == null)
-        {
-            //XRGeneralSettings.Instance = XRGeneralSettings.CreateInstance<XRGeneralSettings>();
-        }
-
-        //if (XRGeneralSettings.Instance.Manager == null)
-        //{
-        //    yield return new WaitUntil(() => XRGeneralSettings.Instance.Manager != null);
-        //}
-
-        XRGeneralSettings.Instance?.Manager?.InitializeLoaderSync();
-
-        if (XRGeneralSettings.Instance?.Manager?.activeLoader == null)
-        {
-            Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
-        }
-        else
-        {
-            XRGeneralSettings.Instance?.Manager?.StartSubsystems();
         }
 
         if (xrObjectPrefab == null)
@@ -67,7 +45,6 @@ public class XRHelper : MonoBehaviour
         if (GameObject.Find("XR") == null)
         {
             spawnedXRObject = GameObject.Instantiate(xrObjectPrefab);
-            spawnedXRObject.name = "XR";
             isInitialised = true;
             return true;
         }
@@ -149,9 +126,7 @@ public class XRHelper : MonoBehaviour
             initiliaseXR();
         }
 
-
-
-        if (active)
+        if(active)
         {
             //main camera is not needed
             GameObject camera = GameObject.Find("Camera");
@@ -172,7 +147,7 @@ public class XRHelper : MonoBehaviour
 
         spawnedXRObject.SetActive(active);
 
-
+        
 
         return active;
     }
@@ -244,15 +219,6 @@ public class XRHelper : MonoBehaviour
         {
             plane.gameObject.SetActive(active);
         }
-    }
-
-    //on destroy, deinitialise the xr object
-    private void OnDestroy()
-    {
-        isInitialised = false;
-        XRGeneralSettings.Instance.Manager.StopSubsystems();
-        XRGeneralSettings.Instance.Manager.DeinitializeLoader();
-
     }
 
 
