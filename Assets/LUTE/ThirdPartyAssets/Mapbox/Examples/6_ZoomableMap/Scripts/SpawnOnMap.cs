@@ -671,6 +671,11 @@
 
         public void RemoveLocationMarker(LocationVariable location)
         {
+            if (_spawnedObjects == null || location == null || _spawnedObjects.Count <= 0)
+            {
+                return;
+            }
+
             var locationMarker = _spawnedObjects.Find(marker =>
                            marker != null && marker.locationInfo != null && marker.locationInfo.infoID == location.Value.infoID);
             if (locationMarker != null)
