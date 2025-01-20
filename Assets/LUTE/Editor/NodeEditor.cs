@@ -13,6 +13,8 @@ public class NodeEditor : Editor
 {
     public static List<Action> actionList = new List<Action>();
 
+    public static bool SelectedNodeDataStale { get; set; }
+
     protected Texture2D addIcon;
     protected Texture2D duplicateIcon;
     protected Texture2D removeIcon;
@@ -336,7 +338,99 @@ public class NodeEditor : Editor
             Event.current.Use();
         }
 
-        // KEYBOARD SHORTCUTS GO HERE
+        if (GUIUtility.keyboardControl == 0) //Only call keyboard shortcuts when not typing in a text field
+        {
+            Event e = Event.current;
+
+            // Copy keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "Copy")
+            {
+                if (engine.SelectedOrders.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "Copy")
+            {
+                actionList.Add(CopyOrder);
+                e.Use();
+            }
+
+            // Cut keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "Cut")
+            {
+                if (engine.SelectedOrders.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "Cut")
+            {
+                actionList.Add(CutOrder);
+                e.Use();
+            }
+
+            // Paste keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "Paste")
+            {
+                OrderCopyBuffer orderCopyBuffer = OrderCopyBuffer.GetInstance();
+                if (orderCopyBuffer.HasOrders())
+                {
+                    e.Use();
+                }
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "Paste")
+            {
+                actionList.Add(PasteOrder);
+                e.Use();
+            }
+
+            // Duplicate keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "Duplicate")
+            {
+                if (engine.SelectedOrders.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "Duplicate")
+            {
+                actionList.Add(CopyOrder);
+                actionList.Add(PasteOrder);
+                e.Use();
+            }
+
+            // Delete keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "Delete")
+            {
+                if (engine.SelectedOrders.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "Delete")
+            {
+                actionList.Add(DeleteOrder);
+                e.Use();
+            }
+
+            // SelectAll keyboard shortcut
+            if (e.type == EventType.ValidateCommand && e.commandName == "SelectAll")
+            {
+                e.Use();
+            }
+
+            if (e.type == EventType.ExecuteCommand && e.commandName == "SelectAll")
+            {
+                actionList.Add(SelectAll);
+                e.Use();
+            }
+        }
 
         //last thing to do is delete any null orders from the list (if they have been deleted or renamed)
         for (int i = orderListProp.arraySize - 1; i >= 0; --i)
@@ -346,6 +440,11 @@ public class NodeEditor : Editor
             {
                 orderListProp.DeleteArrayElementAtIndex(i);
             }
+        }
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            SelectedNodeDataStale = true;
         }
 
         serializedObject.ApplyModifiedProperties();
@@ -447,6 +546,11 @@ public class NodeEditor : Editor
             }
             if (eventHandlerEditor != null)
                 eventHandlerEditor.DrawInspectorGUI();
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                SelectedNodeDataStale = true;
+            }
         }
 
     }
@@ -570,7 +674,7 @@ public class NodeEditor : Editor
 
         if (showCut)
         {
-            orderMenu.AddItem(new GUIContent("Cut"), false, CutOder);
+            orderMenu.AddItem(new GUIContent("Cut"), false, CutOrder);
         }
         else
         {
@@ -655,7 +759,7 @@ public class NodeEditor : Editor
         Repaint();
     }
 
-    protected void CutOder()
+    protected void CutOrder()
     {
         CopyOrder();
         DeleteOrder();

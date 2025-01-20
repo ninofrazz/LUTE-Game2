@@ -51,10 +51,10 @@ public class FadeSprite : Order
         return spriteRenderer.name + " to " + _targetColor.ToString();
     }
 
-    // public override Color GetButtonColor() //when custom styling is implemented
-    // {
-    //     return new Color32(221, 184, 169, 255);
-    // }
+    public override Color GetButtonColour()
+    {
+        return new Color32(200, 255, 200, 255);
+    }
 
 
     #region Backwards compatibility

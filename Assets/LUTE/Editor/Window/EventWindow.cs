@@ -29,8 +29,8 @@ public class EventWindow : EditorWindow
                 { EventType.ContextClick,    e => OnContextClick(e)    },
                 { EventType.KeyDown,         e => OnKeyDown(e)         },
                 { EventType.KeyUp,           e => OnKeyUp(e)           },
-                { EventType.ValidateCommand, e => OnValidateCommand(e) },
-                { EventType.ExecuteCommand,  e => OnExecuteCommand(e)  },
+                { EventType.ValidateCommand, e => OnValidateOrder(e) },
+                { EventType.ExecuteCommand,  e => OnExecuteOrder(e)  },
             };
         rawEventTable = new Dictionary<EventType, EventAction> {
                 { EventType.MouseDown,       e => OnRawMouseDown(e)    },
@@ -48,8 +48,8 @@ public class EventWindow : EditorWindow
     protected virtual void OnContextClick(Event e) { }
     protected virtual void OnKeyDown(Event e) { }
     protected virtual void OnKeyUp(Event e) { }
-    protected virtual void OnValidateCommand(Event e) { }
-    protected virtual void OnExecuteCommand(Event e) { }
+    protected virtual void OnValidateOrder(Event e) { }
+    protected virtual void OnExecuteOrder(Event e) { }
 
     protected virtual void OnRawMouseDown(Event e) { }
     protected virtual void OnRawMouseUp(Event e) { }

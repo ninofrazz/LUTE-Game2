@@ -54,11 +54,11 @@ public class InteractWithXRObject : Order
     public void OnInteract(SelectEnterEventArgs args)
     {
         Debug.Log("Selected");
-        
-        if(_xrObject != null)
+
+        if (_xrObject != null)
         {
             var interactorEv = _xrObject.GetComponent<InteractorEvent>();
-            
+
         }
 
         var grabInteractable = _xrObject.GetComponent<XRGrabInteractable>();
@@ -90,5 +90,10 @@ public class InteractWithXRObject : Order
     public override string GetSummary()
     {
         return $"Waits for interaction with XR Object '{_objectName}'.";
+    }
+
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
     }
 }

@@ -25,5 +25,8 @@ public class Wait : Order
         return _duration.ToString() + " seconds";
     }
 
-    //get the button colour once styling has been implemented
+    public override Color GetButtonColour()
+    {
+        return new Color32(255, 200, 200, 255);
+    }
 }

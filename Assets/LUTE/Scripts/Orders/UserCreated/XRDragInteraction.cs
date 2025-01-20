@@ -193,9 +193,9 @@ public class XRDragInteraction : Order
     {
 
         // Call the event
-       
-        if(onPuzzleSolvedEvent != null)
-        onPuzzleSolvedEvent.Invoke();
+
+        if (onPuzzleSolvedEvent != null)
+            onPuzzleSolvedEvent.Invoke();
 
         // Destroy the transparent object
         if (_transparentObject != null)
@@ -219,5 +219,9 @@ public class XRDragInteraction : Order
     public override string GetSummary()
     {
         return "Handles XR drag interaction for a specified object.";
+    }
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
     }
 }

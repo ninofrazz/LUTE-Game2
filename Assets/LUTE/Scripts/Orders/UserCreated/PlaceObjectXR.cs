@@ -1,13 +1,10 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARFoundation.Samples;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
-
-using Unity.VisualScripting;
-using System.Collections;
 
 [OrderInfo("XR", "PlaceObjectOnPlane", "")]
 [AddComponentMenu("")]
@@ -98,7 +95,7 @@ public class PlaceObjectXR : Order
     IEnumerator waitForOneFrame()
     {
 
-      
+
 
         //get the xr grab interactable component
         UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable = m_SpawnedObject.GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
@@ -279,6 +276,11 @@ public class PlaceObjectXR : Order
     public override string GetSummary()
     {
         return "Places an object on a detected plane, automatically or manually";
+    }
+
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
     }
 }
 

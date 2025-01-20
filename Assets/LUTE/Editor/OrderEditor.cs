@@ -9,7 +9,7 @@ public class OrderEditor : Editor
     #region  statics
     public static Order selectedOrder;
 
-    public static bool SelectedCommandDataStale { get; set; }
+    public static bool SelectedOrderDataStale { get; set; }
 
     //Get the order info here for the list on the node inspector (using static method)
     public static OrderInfoAttribute GetOrderInfo(System.Type orderType)
@@ -114,7 +114,7 @@ public class OrderEditor : Editor
         DrawOrderGUI();
         if (EditorGUI.EndChangeCheck())
         {
-            SelectedCommandDataStale = true;
+            SelectedOrderDataStale = true;
         }
 
         EditorGUILayout.Separator();
@@ -123,7 +123,6 @@ public class OrderEditor : Editor
 
         GUILayout.EndVertical();
     }
-
 
     public virtual void DrawOrderGUI()
     {

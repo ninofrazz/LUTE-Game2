@@ -75,4 +75,9 @@ public class ToggleXR : Order
     {
         return "Toggles the XR camera on or off depending on the chosen setting";
     }
+
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
+    }
 }

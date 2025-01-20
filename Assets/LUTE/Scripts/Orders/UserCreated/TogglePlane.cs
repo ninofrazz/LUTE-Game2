@@ -20,14 +20,19 @@ public class TogglePlane : Order
 
         Continue();
 
-      //this code gets executed as the order is called
-      //some orders may not lead to another node so you can call continue if you wish to move to the next order after this one   
-      //Continue();
+        //this code gets executed as the order is called
+        //some orders may not lead to another node so you can call continue if you wish to move to the next order after this one   
+        //Continue();
     }
 
-  public override string GetSummary()
-  {
- //you can use this to return a summary of the order which is displayed in the inspector of the order
-      return "";
-  }
+    public override string GetSummary()
+    {
+        //you can use this to return a summary of the order which is displayed in the inspector of the order
+        return "";
+    }
+
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
+    }
 }

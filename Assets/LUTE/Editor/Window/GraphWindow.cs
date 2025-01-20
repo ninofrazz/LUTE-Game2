@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -33,10 +34,13 @@ public class GraphWindow : EventWindow
         private SerializedObject node = null;
         private List<ClipboardObject> orders = new List<ClipboardObject>();
         private ClipboardObject eventHandler = null;
+        private Node curNode = null;
+
         //initialise the node copy
         internal NodeCopy(Node node)
         {
             this.node = new SerializedObject(node);
+            this.curNode = node;
             var orderList = node.OrderList;
             foreach (var order in orderList)
             {
@@ -135,7 +139,7 @@ public class GraphWindow : EventWindow
                 SerializedPropertyType.ArraySize);
 
             string copyText = " (Copy)";
-            string name = engine.GetUniqueNodeKey(node.FindProperty("nodeName").stringValue + copyText);
+            string name = storyEngine.GetUniqueNodeKey(curNode._NodeName + copyText);
             if (bluePrint)
             {
                 copyText = !newNode._NodeName.Contains("Blueprint") ? " (Blueprint)" : string.Empty;
@@ -260,6 +264,7 @@ public class GraphWindow : EventWindow
     protected int forceRepaintCount;
     protected Vector2 rightClickDown = -Vector2.one;
     protected Vector2 selectionBoxStartPos = -Vector2.one;
+    protected List<Node> mouseDownSelectionState = new List<Node>();
     protected Texture2D connectionPointTexture;
     protected Rect selectionBox;
     protected Vector2 windowPos;
@@ -1831,19 +1836,19 @@ public class GraphWindow : EventWindow
     //Centre is position in unscaled window space (for pasting nodes)
     protected virtual void PasteNode(Vector2 centre, bool relative = false, bool bluePrint = false, BasicFlowEngine engine = null)
     {
-        var currentEngine = engine != null ? engine : storyEngine;
-        Undo.RecordObject(currentEngine, "Deselect");
+        Undo.RecordObject(storyEngine, "Deselect");
         //deslect all nodes when implemented with rect selection
+        DeselectAllNodes();
 
-        pasteList.Clear();
+        var pasteList = new List<Node>();
+
         foreach (var nodeCopy in copyList)
         {
-            var newNode = nodeCopy.PasteNode(this, currentEngine, bluePrint);
-            pasteList.Add(newNode);
+            pasteList.Add(nodeCopy.PasteNode(this, storyEngine, bluePrint));
         }
 
-        var copiedCentre = GetNodeCentre(pasteList.ToArray()) + currentEngine.ScrollPos;
-        var delta = relative ? centre : (centre / currentEngine.Zoom - copiedCentre);
+        var copiedCentre = GetNodeCentre(pasteList.ToArray()) + storyEngine.ScrollPos;
+        var delta = relative ? centre : (centre / storyEngine.Zoom - copiedCentre);
 
         foreach (var node in pasteList)
         {
@@ -1853,6 +1858,85 @@ public class GraphWindow : EventWindow
         }
 
         UpdateNodes();
+    }
+
+    protected override void OnValidateOrder(Event e)
+    {
+        if (e.type == EventType.ValidateCommand)
+        {
+            var c = e.commandName;
+            if (c == "Copy" || c == "Cut" || c == "SoftDelete" || c == "Delete" || c == "Duplicate")
+            {
+                if (storyEngine.SelectedNodes.Count > 0 || mouseDownSelectionState.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+            else if (c == "Paste")
+            {
+                if (copyList.Count > 0)
+                {
+                    e.Use();
+                }
+            }
+            else if (c == "SelectAll" || c == "Find")
+            {
+                e.Use();
+            }
+        }
+    }
+
+    protected override void OnExecuteOrder(Event e)
+    {
+        switch (e.commandName)
+        {
+            case "Copy":
+                CopyNode();
+                e.Use();
+                break;
+
+            case "Cut":
+                CutNode();
+                e.Use();
+                break;
+
+            case "Paste":
+                PasteNode(position.center - position.position);
+                e.Use();
+                break;
+
+            case "Delete":
+                AddToDeleteList(storyEngine.SelectedNodes);
+                e.Use();
+                break;
+
+            case "SoftDelete":
+                AddToDeleteList(storyEngine.SelectedNodes);
+                e.Use();
+                break;
+
+            case "Duplicate":
+                DuplicateNode();
+                e.Use();
+                break;
+
+            case "SelectAll":
+                Undo.RecordObject(storyEngine, "Selection");
+                storyEngine.ClearSelectedNodes();
+                for (int i = 0; i < nodes.Length; ++i)
+                {
+                    storyEngine.AddSelectedNode(nodes[i]);
+                }
+                e.Use();
+                break;
+
+                //case "Find":
+                //    selectionBoxStartPos = 0;
+                //    popupScroll = Vector2.zero;
+                //    EditorGUI.FocusTextInControl(SearchFieldName);
+                //    e.Use();
+                //    break;
+        }
     }
 
     public Vector2 GetNodeCentre(Node[] nodes)
@@ -3468,9 +3552,15 @@ public class GraphWindow : EventWindow
                 Repaint();
             }
 
-            if (OrderEditor.SelectedCommandDataStale)
+            if (OrderEditor.SelectedOrderDataStale)
             {
-                OrderEditor.SelectedCommandDataStale = false;
+                OrderEditor.SelectedOrderDataStale = false;
+                Repaint();
+            }
+
+            if (NodeEditor.SelectedNodeDataStale)
+            {
+                NodeEditor.SelectedNodeDataStale = false;
                 Repaint();
             }
         }

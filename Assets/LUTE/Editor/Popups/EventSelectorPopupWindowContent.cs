@@ -1,8 +1,8 @@
-using UnityEditor;
-using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
+using UnityEngine;
 
 //popup window for selecting an event handler
 public class EventSelectorPopupWindowContent : BasePopupWindowContent
@@ -111,7 +111,7 @@ public class EventSelectorPopupWindowContent : BasePopupWindowContent
             node._EventHandler = newHandler;
         }
 
-        //update stale node data here
+        NodeEditor.SelectedNodeDataStale = true;
 
         // Because this is an async call, we need to force prefab instances to record changes
         PrefabUtility.RecordPrefabInstancePropertyModifications(node);

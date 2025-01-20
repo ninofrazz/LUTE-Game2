@@ -369,4 +369,9 @@ public class XRObjectAtLocation : Order
     {
         return "Places an object at a specified location";
     }
+
+    public override Color GetButtonColour()
+    {
+        return new Color32(184, 253, 255, 255);
+    }
 }
