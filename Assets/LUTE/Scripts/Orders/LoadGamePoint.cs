@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static SavePoint;
 
 [OrderInfo(
     "Saving",
@@ -15,71 +13,44 @@ public class LoadGamePoint : Order
     [SerializeField] protected bool loadCustomPoint = false;
     [Tooltip("If loading from specific point, provide the key that you wish to load; this should match the save point ID exactly.")]
     [SerializeField] protected string customKey = string.Empty;
-    [Tooltip("If true, return to the previous node if we do not have a save to load. Useful for when using menus that have a load function without a current saved game.")]
-    [SerializeField] protected bool returnToPreviousNode;
+    [Tooltip("If set to true and the loading fails then the node moves to next order in the list - often this will be calling next node and returning to the prior node (such as a menu).")]
+    [SerializeField] protected bool continueToNextOrder = true;
 
     public override void OnEnter()
     {
         var saveManager = LogaManager.Instance.SaveManager;
 
-        if (loadCustomPoint && !string.IsNullOrEmpty(customKey))
+        if (string.IsNullOrEmpty(saveManager.StartScene))
         {
-            if (string.IsNullOrEmpty(saveManager.StartScene))
-            {
-                saveManager.StartScene = SceneManager.GetActiveScene().name;
-            }
-            if (saveManager.HasSaveData(saveKey))
-            {
-                saveManager.Load(saveKey, true, customKey);
-            }
-            else if (returnToPreviousNode)
-            {
-                ReturnToPriorNode();
-            }
+            saveManager.StartScene = SceneManager.GetActiveScene().name;
         }
-        else
+
+        if (!HandleSaveDataLoad(saveManager))
         {
-            if (string.IsNullOrEmpty(saveManager.StartScene))
+            if (continueToNextOrder)
             {
-                saveManager.StartScene = SceneManager.GetActiveScene().name;
-            }
-            if (saveManager.HasSaveData(saveKey))
-            {
-                saveManager.Load(saveKey);
-            }
-            else if(returnToPreviousNode)
-            {
-                ReturnToPriorNode();
+                Continue();
             }
         }
     }
 
-    protected void ReturnToPriorNode()
+    private bool HandleSaveDataLoad(SaveManager saveManager)
     {
-        //If we have been called by another node (such as when using a menu) and we do not have a save to load then we should return to this previous node
-        //Otherwise we will be left with a blank node and no way to progress
-        var engine = GetEngine();
-        var nodes = engine.GetComponents<Node>();
-        for (int i = 0; i < nodes.Length; i++)
+        if (!saveManager.HasSaveData(saveKey))
         {
-            var node = nodes[i];
-            var orders = node.OrderList;
-            foreach (var order in orders)
-            {
-                var nodesWithConnections = new List<Node>();
-                order.GetConnectedNodes(ref nodesWithConnections);
-                foreach (var connectedNode in nodesWithConnections)
-                {
-                    if (connectedNode == this.ParentNode)
-                    {
-                        engine.ExecuteNode(node);
-                        Continue();
-                        return;
-                    }
-
-                }
-            }
+            return false;
         }
+
+        if (loadCustomPoint && !string.IsNullOrEmpty(customKey))
+        {
+            saveManager.Load(saveKey, true, customKey);
+        }
+        else
+        {
+            saveManager.Load(saveKey);
+        }
+
+        return true;
     }
 
     public override string GetSummary()
@@ -87,7 +58,7 @@ public class LoadGamePoint : Order
         string summary = "Load game from ";
         if (saveKey != LogaConstants.DefaultSaveDataKey)
         {
-            summary  += saveKey;
+            summary += saveKey;
         }
         else
         {

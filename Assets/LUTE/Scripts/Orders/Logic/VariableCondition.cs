@@ -125,7 +125,8 @@ public abstract class VariableCondition : Condition, ISerializationCallbackRecei
         for (int i = 0; i < conditions.Count; i++)
         {
             string dataDesc = conditions[i].AnyVariable.GetDataDescription();
-            if (conditions[i].AnyVariable.variable.GetType() == typeof(LocationVariable))
+            Variable var = conditions[i].AnyVariable.variable;
+            if (var.GetType() == typeof(LocationVariable))
             {
                 if (GetEngine().DemoMapMode)
                 {
@@ -136,9 +137,17 @@ public abstract class VariableCondition : Condition, ISerializationCallbackRecei
                     dataDesc = "Device location";
                 }
             }
+            if (var.GetType() == typeof(SaveKeyVariable))
+            {
+                string key = conditions[i].AnyVariable.data.saveKeyData.Value;
+                if (string.IsNullOrEmpty(key))
+                {
+                    dataDesc = "Save Manager Default Key (checks if saves exists)";
+                }
+            }
             summary.Append(conditions[i].AnyVariable.variable.Key + " " +
-                           VariableUtil.GetCompareOperatorDescription(conditions[i].CompareOperator) + " " +
-                           dataDesc);
+                       VariableUtil.GetCompareOperatorDescription(conditions[i].CompareOperator) + " " +
+                       dataDesc);
 
             if (i < conditions.Count - 1)
             {
@@ -223,6 +232,7 @@ public abstract class VariableCondition : Condition, ISerializationCallbackRecei
     [SerializeField] protected UDateTimeData uDateTimeData;
     [SerializeField] protected UDateData uDateData;
     [SerializeField] protected UTimeData uTimeData;
+    [SerializeField] protected SaveKeyData saveKeyData;
 
     void ISerializationCallbackReceiver.OnBeforeSerialize()
     {
@@ -314,6 +324,11 @@ public abstract class VariableCondition : Condition, ISerializationCallbackRecei
             {
                 anyVariable.data.uTimeData = uTimeData;
                 uTimeData = new UTimeData();
+            }
+            else if (variable.GetType() == typeof(SaveKeyVariable) && !saveKeyData.Equals(new SaveKeyData()))
+            {
+                anyVariable.data.saveKeyData = saveKeyData;
+                saveKeyData = new SaveKeyData();
             }
             //moved to new anyvar storage, clear legacy.
             variable = null;

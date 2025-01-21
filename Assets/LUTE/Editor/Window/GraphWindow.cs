@@ -3508,9 +3508,9 @@ public class GraphWindow : EventWindow
         EditorApplication.playModeStateChanged -= EditorApplication_playModeStateChanged;
 #endif
         //close the map window
-        var mapWindow = MapboxControls.GetWindow<MapboxControls>();
-        if (mapWindow != null)
+        if (EditorWindow.HasOpenInstances<MapboxControls>())
         {
+            var mapWindow = MapboxControls.GetWindow<MapboxControls>();
             mapWindow.Close();
         }
     }

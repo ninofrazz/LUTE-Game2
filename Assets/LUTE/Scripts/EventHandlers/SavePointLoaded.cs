@@ -1,9 +1,8 @@
-using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
+using UnityEngine;
 
 [EventHandlerInfo
-    ("Saving", 
+    ("Saving",
     "Save Point Loaded",
     "SavePointLoaded is called when a save point is loaded. Use the 'new_game' key to handle game start.")]
 public class SavePointLoaded : EventHandler
@@ -14,7 +13,7 @@ public class SavePointLoaded : EventHandler
 
     protected void OnSavePointLoaded(string _savePointKey)
     {
-        for(int i = 0; i < savePointKeys.Count; i++)
+        for (int i = 0; i < savePointKeys.Count; i++)
         {
             var key = savePointKeys[i];
             if (string.Compare(key, _savePointKey, true) == 0)
@@ -28,7 +27,7 @@ public class SavePointLoaded : EventHandler
     public static void NotifyEventHandlers(string _savePointKey)
     {
         // Fire any matching SavePointLoaded event handler with matching save key
-        var eventHandlers = Object.FindObjectsOfType<SavePointLoaded>();
+        var eventHandlers = Object.FindObjectsByType<SavePointLoaded>(FindObjectsSortMode.None);
         for (int i = 0; i < eventHandlers.Length; i++)
         {
             var eventHandler = eventHandlers[i];

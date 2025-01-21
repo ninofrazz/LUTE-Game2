@@ -84,6 +84,9 @@ public class SetVariable : Order, ISerializationCallbackReceiver
     [Tooltip("Time of day value to compare against")]
     [SerializeField] protected TimeOfDayData timeOfDayData;
 
+    [Tooltip("The save key to compare against - if empty then check against the save manager key.")]
+    [SerializeField] protected SaveKeyData saveKeyData;
+
     public void OnBeforeSerialize()
     {
     }
@@ -125,6 +128,11 @@ public class SetVariable : Order, ISerializationCallbackReceiver
         {
             variable.data.timeOfDayData = timeOfDayData;
             timeOfDayData = new TimeOfDayData();
+        }
+        else if (variable.GetType() == typeof(SaveKeyVariable) && !saveKeyData.Equals(new SaveKeyData()))
+        {
+            variable.data.saveKeyData = saveKeyData;
+            saveKeyData = new SaveKeyData();
         }
 
         variable = null;

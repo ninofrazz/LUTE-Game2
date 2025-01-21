@@ -1,3 +1,4 @@
+using LoGaCulture.LUTE;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -310,4 +311,7 @@ public class FloatDataDrawer : VariableDataDrawer<FloatVariable>
 { }
 [CustomPropertyDrawer(typeof(StringData))]
 public class StringDataDrawer : VariableDataDrawer<StringVariable>
+{ }
+[CustomPropertyDrawer(typeof(SaveKeyData))]
+public class SaveKeyDataDrawer : VariableDataDrawer<SaveKeyVariable>
 { }
