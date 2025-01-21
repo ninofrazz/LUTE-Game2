@@ -912,6 +912,7 @@ GameObject:
   - component: {fileID: 543519223}
   - component: {fileID: 543519225}
   - component: {fileID: 543519224}
+  - component: {fileID: 543519226}
   m_Layer: 0
   m_Name: BasicFlowEngine
   m_TagString: Untagged
@@ -938,7 +939,7 @@ MonoBehaviour:
   localizationId: 
   selectedOrders: []
   selectedNodes: []
-  nodeViewHeight: 483
+  nodeViewHeight: 431
   hideOrders: []
   variables:
   - {fileID: 543519193}
@@ -1476,8 +1477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 931
-    y: 175
+    x: 930
+    y: 176
     width: 115.42
     height: 40
   nodeName: Basic Menu
@@ -1488,6 +1489,7 @@ MonoBehaviour:
   - {fileID: 543519216}
   - {fileID: 543519217}
   - {fileID: 543519218}
+  - {fileID: 543519226}
   eventHandler: {fileID: 543519221}
   isGrouped: 0
   groupIndex: -1
@@ -1716,6 +1718,29 @@ MonoBehaviour:
   showDesc: 0
   saveable: 0
   NodeComplete: 0
+--- !u!114 &543519226
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543519182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c5ebc1795c0734ea5c2c8cab643c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Return
+  description: 
+  targetNode: {fileID: 543519215}
+  hideIfVisited: 0
+  interactable: 1
+  setMenuDialogue: {fileID: 0}
+  hideThisOption: 0
+  closeMenuOnSelect: 1
+  buttonFeedback: {fileID: 0}
+  buttonSound: {fileID: 0}
+  saveSettings: 0
 --- !u!1 &680917997
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ MonoBehaviour:
   customLUTEUIText:
     normal: {fileID: 0}
   default100:
-    normal: {fileID: 2800000, guid: 93a2368be3ed45740870912b34a49ee3, type: 3}
+    normal: {fileID: 2800000, guid: 3d69bf4b1f575644db3fcca0cb5c60f8, type: 3}
   diamond:
     normal: {fileID: 2800000, guid: 1e4868606be888243b07b3df1e0cbf5f, type: 3}
   duplicate:
