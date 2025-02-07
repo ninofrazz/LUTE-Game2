@@ -15,7 +15,7 @@ C:/GitHub/LUTE
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-64270
+51625
 -job-worker-count
 13
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/GitHub/LUTE
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [68948]  Target information:
+Player connection [70264]  Target information:
 
-Player connection [68948]  * "[IP] 10.0.0.2 [Port] 0 [Flags] 2 [Guid] 578555475 [EditorId] 578555475 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-GA316GR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [70264]  * "[IP] 10.0.0.2 [Port] 0 [Flags] 2 [Guid] 3594107741 [EditorId] 3594107741 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-GA316GR) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [68948] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [68948] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [70264] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [70264] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 13
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -75,7 +75,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.13 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 556.59 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.29f1 (9fafe5c9db65)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity/Hub/Editor/6000.0.29f1/Editor/Data/Resources/UnitySubsystems
@@ -97,57 +97,41 @@ Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity/Hub/Editor/6000.0.29f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: D:/Program Files/Unity/Hub/Editor/6000.0.29f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.001961 seconds.
-- Loaded All Assemblies, in  0.299 seconds
+Registered in 0.005525 seconds.
+- Loaded All Assemblies, in  0.405 seconds
 Native extension for Android target not found
-InvalidOperationException: Cannot process request because the process (60572) has exited.
-  at System.Diagnostics.Process.GetProcessHandle (System.Int32 access, System.Boolean throwIfExited) [0x0004e] in <e243450672844c6f9f403082ca9f1be7>:0 
-  at System.Diagnostics.Process.GetProcessHandle (System.Int32 access) [0x00000] in <e243450672844c6f9f403082ca9f1be7>:0 
-  at System.Diagnostics.Process.Kill () [0x00002] in <e243450672844c6f9f403082ca9f1be7>:0 
-  at (wrapper remoting-invoke-with-check) System.Diagnostics.Process.Kill()
-  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x00174] in <c10ede9e037d489abf331be178382e86>:0 
-  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00049] in <c10ede9e037d489abf331be178382e86>:0 
-  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00087] in <c10ede9e037d489abf331be178382e86>:0 
-  at UnityEditor.Android.TargetExtension.OnLoad () [0x000af] in <c10ede9e037d489abf331be178382e86>:0 
-  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x000ba] in <20f98a04ac634cc8bf5f95425bb19bb9>:0 
-UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
-UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
-UnityEngine.DebugLogHandler:LogException(Exception, Object)
-UnityEngine.Logger:LogException(Exception, Object)
-UnityEngine.Debug:LogException(Exception)
-UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules()
-
+Android Extension - Scanning For ADB Devices 457 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.632 seconds
-Domain Reload Profiling: 2931ms
-	BeginReloadAssembly (110ms)
+- Finished resetting the current domain, in  0.800 seconds
+Domain Reload Profiling: 1205ms
+	BeginReloadAssembly (178ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (118ms)
-		LoadAssemblies (110ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (142ms)
+		LoadAssemblies (178ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (115ms)
-			TypeCache.Refresh (113ms)
-				TypeCache.ScanAssembly (104ms)
+		AnalyzeDomain (139ms)
+			TypeCache.Refresh (137ms)
+				TypeCache.ScanAssembly (124ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (2632ms)
+	FinalizeReload (801ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2588ms)
+		SetupLoadedEditorAssemblies (757ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2425ms)
+			InitializePlatformSupportModulesInManaged (540ms)
 			SetLoadedEditorAssemblies (3ms)
 			BeforeProcessingInitializeOnLoad (4ms)
-			ProcessInitializeOnLoadAttributes (105ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			ProcessInitializeOnLoadAttributes (134ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -156,10 +140,10 @@ Domain Reload Profiling: 2931ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.681 seconds
+- Loaded All Assemblies, in  0.983 seconds
 Script 'VideoPlayer' has the same name as built-in Unity component.
 AddComponent and GetComponent will not work with this script.
-Refreshing native plugins compatible for Editor in 4.28 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 4.57 ms, found 6 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
@@ -197,105 +181,53 @@ Mono: successfully reloaded assembly
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.809 seconds
-Domain Reload Profiling: 1487ms
-	BeginReloadAssembly (136ms)
+- Finished resetting the current domain, in  0.997 seconds
+Domain Reload Profiling: 1976ms
+	BeginReloadAssembly (152ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (29ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (33ms)
-	LoadAllAssembliesAndSetupDomain (471ms)
-		LoadAssemblies (310ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (759ms)
+		LoadAssemblies (544ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (250ms)
-			TypeCache.Refresh (172ms)
-				TypeCache.ScanAssembly (157ms)
-			BuildScriptInfoCaches (60ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (809ms)
+		AnalyzeDomain (316ms)
+			TypeCache.Refresh (218ms)
+				TypeCache.ScanAssembly (200ms)
+			BuildScriptInfoCaches (75ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (998ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (702ms)
+		SetupLoadedEditorAssemblies (863ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (66ms)
-			ProcessInitializeOnLoadAttributes (559ms)
-			ProcessInitializeOnLoadMethodAttributes (56ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (683ms)
+			ProcessInitializeOnLoadMethodAttributes (76ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 3.74 ms, found 6 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 5.95 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 157 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9170 unused Assets / (10.7 MB). Loaded Objects now: 9675.
-Memory consumption went from 312.2 MB to 301.5 MB.
-Total: 8.620200 ms (FindLiveObjects: 0.632400 ms CreateObjectMapping: 0.403200 ms MarkObjects: 3.997000 ms  DeleteObjects: 3.586500 ms)
+Unloading 9170 unused Assets / (11.2 MB). Loaded Objects now: 9675.
+Memory consumption went from 310.2 MB to 299.0 MB.
+Total: 10.907800 ms (FindLiveObjects: 0.628400 ms CreateObjectMapping: 0.430100 ms MarkObjects: 4.891200 ms  DeleteObjects: 4.956800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 631733.041036 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles12_col.png
-  artifactKey: Guid(939781b433a8cfb43a425a4ccd962df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles12_col.png using Guid(939781b433a8cfb43a425a4ccd962df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e8cc069ade2e1f93bba8bd15de585f6') in 0.0786614 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 638623.786989 seconds.
+  path: Assets/LUTE/EditorResources/LogaEditorResources.asset
+  artifactKey: Guid(ec653538e368ace43af3288c90d9d582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LUTE/EditorResources/LogaEditorResources.asset using Guid(ec653538e368ace43af3288c90d9d582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ed0fd51ed76cf02c4287339b8e0c65d') in 0.1007831 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles69_col.png
-  artifactKey: Guid(ee0ae448e8c5d5d448cec42ba716ed21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles69_col.png using Guid(ee0ae448e8c5d5d448cec42ba716ed21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3e4e9edb73e7748d938a0e20d233050') in 0.020795 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles44_col.png
-  artifactKey: Guid(eba09c7fb206e1b47b85a4ffce19e895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Feel/MMFeedbacks/Demos/SequencingDemo/Textures/Tiles44_col.png using Guid(eba09c7fb206e1b47b85a4ffce19e895) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ffd51c181f7d09163a1d7df8804d18e9') in 0.0183388 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficNorm4.png
-  artifactKey: Guid(51d3e9ec6fa1cec4791cbeaa26816cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficNorm4.png using Guid(51d3e9ec6fa1cec4791cbeaa26816cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd506c0ad1d4578ecf0fdbbedeb4b2db4') in 0.0593727 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/traffic4.png
-  artifactKey: Guid(8d97105b69182cd48a279b7135b33a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/traffic4.png using Guid(8d97105b69182cd48a279b7135b33a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf8500bfda538b121dde14fc9a3d9ad0') in 0.0221172 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficHeight2.png
-  artifactKey: Guid(12e7d749f709dcd4791267fa7bbebc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficHeight2.png using Guid(12e7d749f709dcd4791267fa7bbebc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ad55c788cce80399d84e091740a9803') in 0.0223616 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficNorm2.png
-  artifactKey: Guid(c1eca697f699f2244ac7c55b7f5ea199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LUTE/ThirdPartyAssets/Mapbox/Examples/2_AstronautGame/AstronautGame/Road/trafficNorm2.png using Guid(c1eca697f699f2244ac7c55b7f5ea199) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2572da3ba24572511b5293abd568d72') in 0.019657 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0

@@ -449,7 +449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: nodeViewHeight
-      value: 601
+      value: 431
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: groups.Array.size
@@ -469,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: variables.Array.size
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: groupnames.Array.size
@@ -568,13 +568,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 509186686}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      propertyPath: 'variables.Array.data[20]'
+      value: 
+      objectReference: {fileID: 509186711}
+    - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: selectedOrders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 509186710}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[1]'
       value: 
@@ -638,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedOrders.Array.data[0]'
       value: 
-      objectReference: {fileID: 509186695}
+      objectReference: {fileID: 509186713}
     - target: {fileID: 8911882701663352154, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: m_Name
       value: BasicGame
@@ -942,6 +946,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 509186709}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509186710}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509186712}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509186711}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509186713}
   m_SourcePrefab: {fileID: 100100000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
 --- !u!1 &35078012 stripped
 GameObject:
@@ -967,6 +983,11 @@ MonoBehaviour:
 --- !u!224 &35078014 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 41498979736821518, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+  m_PrefabInstance: {fileID: 35078011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &35078015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7120870170000618967, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
   m_PrefabInstance: {fileID: 35078011}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &45473886
@@ -2049,6 +2070,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -2106,6 +2130,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -2160,6 +2187,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186525
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2317,6 +2347,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   setOperator: 0
   var: {fileID: 0}
   integerData:
@@ -2337,6 +2370,9 @@ MonoBehaviour:
   timeOfDayData:
     timeOfDayRef: {fileID: 0}
     timeOfDayVal: 0
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186537
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2417,6 +2453,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   setOperator: 0
   var: {fileID: 0}
   integerData:
@@ -2437,6 +2476,9 @@ MonoBehaviour:
   timeOfDayData:
     timeOfDayRef: {fileID: 0}
     timeOfDayVal: 0
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186540
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2696,6 +2738,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   setOperator: 0
   var: {fileID: 0}
   integerData:
@@ -2716,6 +2761,9 @@ MonoBehaviour:
   timeOfDayData:
     timeOfDayRef: {fileID: 0}
     timeOfDayVal: 0
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186578
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2784,6 +2832,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   setOperator: 0
   var: {fileID: 0}
   integerData:
@@ -2804,6 +2855,9 @@ MonoBehaviour:
   timeOfDayData:
     timeOfDayRef: {fileID: 0}
     timeOfDayVal: 0
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186579
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2887,6 +2941,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -2944,6 +3001,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -2998,6 +3058,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186614
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3257,6 +3320,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   - compareOperator: 0
     anyVariable:
       variable: {fileID: 509186665}
@@ -3314,6 +3380,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   - compareOperator: 1
     anyVariable:
       variable: {fileID: 509186663}
@@ -3371,6 +3440,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   - compareOperator: 5
     anyVariable:
       variable: {fileID: 509186664}
@@ -3428,6 +3500,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -3485,6 +3560,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -3539,6 +3617,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186661
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3759,6 +3840,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -3816,6 +3900,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -3870,6 +3957,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186670
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3994,6 +4084,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4051,6 +4144,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -4105,6 +4201,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186686
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4208,6 +4307,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4265,6 +4367,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -4319,6 +4424,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186689
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4390,6 +4498,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4447,6 +4558,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -4501,6 +4615,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186690
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4572,6 +4689,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4629,6 +4749,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -4683,6 +4806,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186691
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4754,6 +4880,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4811,6 +4940,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -4865,6 +4997,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186692
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4936,6 +5071,9 @@ MonoBehaviour:
           uTimeRef: {fileID: 0}
           uTimeVal:
             _timeString: 00:00:00
+        saveKeyData:
+          saveKeyRef: {fileID: 0}
+          saveKeyVal: 
   compareOperator: 0
   anyVariable:
     variable: {fileID: 0}
@@ -4993,6 +5131,9 @@ MonoBehaviour:
         uTimeRef: {fileID: 0}
         uTimeVal:
           _timeString: 00:00:00
+      saveKeyData:
+        saveKeyRef: {fileID: 0}
+        saveKeyVal: 
   variable: {fileID: 0}
   integerData:
     integerRef: {fileID: 0}
@@ -5047,6 +5188,9 @@ MonoBehaviour:
     uTimeRef: {fileID: 0}
     uTimeVal:
       _timeString: 00:00:00
+  saveKeyData:
+    saveKeyRef: {fileID: 0}
+    saveKeyVal: 
 --- !u!114 &509186693
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5376,9 +5520,160 @@ MonoBehaviour:
   hoverStartTime: 0
   targetUnlockNode: {fileID: 0}
   targetKeyNode: {fileID: 0}
-  showDesc: 1
+  showDesc: 0
   saveable: 0
   NodeComplete: 0
+--- !u!114 &509186710
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509186423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9f689a21732a34489f55c1ed82a919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 25909.07
+    y: 24736.912
+    width: 91.64
+    height: 40
+  nodeName: Node 3
+  nodeDescription: Basic building block of a narrative engine
+  groupDescription: A series of nodes that can be executed as a group
+  itemId: 0
+  orderList:
+  - {fileID: 509186712}
+  - {fileID: 509186713}
+  eventHandler: {fileID: 0}
+  isGrouped: 0
+  groupIndex: -1
+  repeatable: 0
+  nodeLocation: {fileID: 0}
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  hoverStartTime: 0
+  targetUnlockNode: {fileID: 0}
+  targetKeyNode: {fileID: 0}
+  showDesc: 0
+  saveable: 0
+  NodeComplete: 0
+--- !u!114 &509186711
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509186423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7989da98b0f634ca61fe1dea0724ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: Var9
+  propertyReferences: []
+  value: {fileID: 0}
+--- !u!114 &509186712
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509186423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59d329a03b72f947aa179be70c1747f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  targetObject: {fileID: 35078015}
+  targetComponentAssemblyName: Character, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: 'UnityEngine.Component[]'
+  targetComponentText: Character
+  targetMethod: GetPortrait
+  targetMethodText: 'GetPortrait (String): Sprite'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 1
+  returnValueVariableKey: 
+  returnValueType: UnityEngine.Sprite
+  showInherited: 0
+  callMode: 0
+--- !u!114 &509186713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509186423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344101a6fba9c64448f020dfd7b7abae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 475226106}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: SetStandardText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &580148946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,7 +5877,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7903432468059836635, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
   m_PrefabInstance: {fileID: 35078011}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 35078015}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b52287538592bb04b8a2d1345e48bd7e, type: 3}
