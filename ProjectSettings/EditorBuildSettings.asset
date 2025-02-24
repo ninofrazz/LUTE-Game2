@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LUTE_Starter Scenes/Scenes/Games/BasicGame/BasicGame.unity
+    path: Assets/Custom Scenes/BasicGame.unity
     guid: 1c32c43aecfee754b9cd100f85c1d5c6
   - enabled: 1
-    path: Assets/LUTE_Starter Scenes/Scenes/Games/BasicGame/New Scene.unity
+    path: Assets/Custom Scenes/MightyStoneScene.unity
     guid: 543d59f4664eab14889dd10c99ccdfab
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a3b44f079399f1e40bf8b146f79bb5bc, type: 2}

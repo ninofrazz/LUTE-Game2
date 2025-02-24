@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LoGaCulture.LUTE
 {
-    public class TestGlobalVariable : MonoBehaviour
+    public class GlobalVariableComm : MonoBehaviour
     {
         public BasicFlowEngine flowEngineGlobal;
         public bool flowEngineBool1;
+        string LocationName;
+
         void Start()
         {
 
             flowEngineGlobal = GameObject.Find("GlobalVariablesEngine").GetComponent<BasicFlowEngine>();
-
+            LocationName = SceneManager.GetActiveScene().name;
         }
 
         // Update is called once per frame
@@ -26,7 +29,7 @@ namespace LoGaCulture.LUTE
 
         void Completed()
         {
-            flowEngineGlobal.SetBooleanVariable("Bool_1", true);
+            flowEngineGlobal.SetBooleanVariable(LocationName, true);
         }
 
     }

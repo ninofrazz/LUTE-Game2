@@ -135,7 +135,7 @@ namespace LoGaCulture.LUTE
                     break;
                 case LUTELocationInfo.LocationStatus.Completed:
                     SetMarkerSprite(locationInfo.CompletedSprite);
-                    //    SetRadiusColour(locationInfo.completedRadiusColour);
+                    SetRadiusColour(locationInfo.completedRadiusColour);
                     break;
             }
         }

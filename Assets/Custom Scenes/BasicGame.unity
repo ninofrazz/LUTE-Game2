@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594711899497329714, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 830664824052957531, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: orderList.Array.size
@@ -397,11 +397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.x
-      value: -25635.828
+      value: -25592.828
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.y
-      value: -24644.848
+      value: -24545.848
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: colourOrders
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[0]'
       value: 
-      objectReference: {fileID: 134540020}
+      objectReference: {fileID: 134540069}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[1]'
       value: 
@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedOrders.Array.data[0]'
       value: 
-      objectReference: {fileID: 134540105}
+      objectReference: {fileID: 0}
     - target: {fileID: 8911882701663352154, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: m_Name
       value: BasicGame
@@ -656,9 +656,6 @@ PrefabInstance:
       addedObject: {fileID: 134540100}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540105}
-    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 134540106}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
@@ -671,7 +668,7 @@ PrefabInstance:
       addedObject: {fileID: 134540111}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540112}
+      addedObject: {fileID: 134540126}
   m_SourcePrefab: {fileID: 100100000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
 --- !u!114 &134539927 stripped
 MonoBehaviour:
@@ -784,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: DevilsC
+  key: DevilsChair
   propertyReferences: []
   value: {fileID: 11400000, guid: 1802c22c373676243b07bd314f4bdc2d, type: 2}
 --- !u!114 &134539970
@@ -889,7 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: RingS
+  key: RingSone
   propertyReferences: []
   value: {fileID: 11400000, guid: 15b8f4264e0e36a43878ddbf3bb3f731, type: 2}
 --- !u!114 &134539996
@@ -1085,7 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: FertilityS
+  key: FertilitySone
   propertyReferences: []
   value: {fileID: 11400000, guid: 63bee26aa4776df438f7d6fe9f07e3ee, type: 2}
 --- !u!114 &134540003
@@ -1191,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: BarberS
+  key: BarberSone
   propertyReferences: []
   value: {fileID: 11400000, guid: ac9405b6e1894f84e80410b95ae4034f, type: 2}
 --- !u!114 &134540007
@@ -1207,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: SwindonS
+  key: SwindonSone
   propertyReferences: []
   value: {fileID: 11400000, guid: 1a4bb7dd6b5b36a44aab689ab3bbce40, type: 2}
 --- !u!114 &134540008
@@ -1435,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: BlacksmithS
+  key: BlacksmithSone
   propertyReferences: []
   value: {fileID: 11400000, guid: edb9cf2ff2cdb0741b1b6f41974fe796, type: 2}
 --- !u!114 &134540017
@@ -1542,8 +1539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26720.574
-    y: 24954.594
+    x: 26809.574
+    y: 24949.594
     width: 174.68
     height: 40
   nodeName: Loc The Mighty Stone
@@ -1553,8 +1550,7 @@ MonoBehaviour:
   orderList:
   - {fileID: 134540022}
   - {fileID: 134540073}
-  - {fileID: 134540105}
-  - {fileID: 134540112}
+  - {fileID: 134540126}
   eventHandler: {fileID: 134540021}
   isGrouped: 0
   groupIndex: -1
@@ -1634,7 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: MightyS
+  key: MightyStone
   propertyReferences: []
   value: {fileID: 11400000, guid: 3ee5ffb26d9aa3240a142a332c9b8c9f, type: 2}
 --- !u!114 &134540063
@@ -1733,8 +1729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26953.514
-    y: 24954.348
+    x: 26804.514
+    y: 24875.348
     width: 183.73
     height: 40
   nodeName: Complete Mighty Stone
@@ -1770,9 +1766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 2
-  key: Bool_1
+  key: MightyStoneScene
   propertyReferences: []
-  value: 1
+  value: 0
 --- !u!114 &134540073
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1813,7 +1809,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 25920.828
-    y: 24966.848
+    y: 24967.848
     width: 132.76001
     height: 40
   nodeName: Initial Dialogue
@@ -1879,7 +1875,7 @@ MonoBehaviour:
           diceVal: 0
         booleanData:
           booleanRef: {fileID: 0}
-          booleanVal: 0
+          booleanVal: 1
         floatData:
           floatRef: {fileID: 0}
           floatVal: 0
@@ -2067,7 +2063,7 @@ MonoBehaviour:
         diceVal: 0
       booleanData:
         booleanRef: {fileID: 0}
-        booleanVal: 1
+        booleanVal: 0
       floatData:
         floatRef: {fileID: 0}
         floatVal: 0
@@ -2163,38 +2159,6 @@ MonoBehaviour:
     or create your own - use our Wiki page for more info and tips!
   typingSpeed: 40
   extendPrevious: 0
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  fadeWhenDone: 1
-  allowLineSkip: 1
-  waitForClick: 1
-  timeToWait: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setDialogueBox: {fileID: 0}
-  showButton: 1
---- !u!114 &134540105
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d6b77eb00dafe45bc66ef633cccddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 0}
-  characterPortrait: {fileID: 0}
-  characterName: 
-  characterNameColour:
-    serializedVersion: 2
-    rgba: 0
-  storyText: Level Completed
-  typingSpeed: 40
-  extendPrevious: 1
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2443,22 +2407,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentNode: {fileID: 134540069}
   FireOn: 1
---- !u!114 &134540112
+--- !u!114 &134540126
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134539931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b319c96f49b7a49b87135a6e3241c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  location:
-    locationRef: {fileID: 134540023}
-    locationVal: {fileID: 0}
-  status: 2
 --- !u!1 &313712178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +2796,10 @@ PrefabInstance:
     - target: {fileID: 2222521867141562182, guid: a77b36c1fde91dd4e870fe4473aef52d, type: 3}
       propertyPath: m_Name
       value: MapboxAttribution
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688173431146676430, guid: a77b36c1fde91dd4e870fe4473aef52d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7887140154868024631, guid: a77b36c1fde91dd4e870fe4473aef52d, type: 3}
       propertyPath: m_Pivot.x
