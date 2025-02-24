@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: SimulationEnvironmentAssetsManager - Copy
   m_EditorClassIdentifier: 
   m_EnvironmentPrefabPaths:
-  - Assets/LUTE_Starter Scenes/Scenes/AR/DefaultSimulationEnvironment1.prefab
+  - Assets/DefaultSimulationEnvironment 2.prefab
+  - Assets/LUTE_Starter Scenes/Scenes/Games/AR/Prefabs/DefaultSimulationEnvironment1.prefab
+  - Assets/Simulation Environment_Nino.prefab
   - Packages/com.unity.xr.arfoundation/Assets/Prefabs/DefaultSimulationEnvironment.prefab
   m_FallbackAtEndOfList: 1
