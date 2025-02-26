@@ -397,11 +397,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.x
-      value: -25592.828
+      value: -26720.242
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.y
-      value: -24545.848
+      value: -24817.29
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: colourOrders
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[0]'
       value: 
-      objectReference: {fileID: 134540069}
+      objectReference: {fileID: 134540020}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[1]'
       value: 
@@ -668,7 +668,22 @@ PrefabInstance:
       addedObject: {fileID: 134540111}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540126}
+      addedObject: {fileID: 134540143}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540146}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540145}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540144}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540148}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540164}
   m_SourcePrefab: {fileID: 100100000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
 --- !u!114 &134539927 stripped
 MonoBehaviour:
@@ -886,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: RingSone
+  key: RingStone
   propertyReferences: []
   value: {fileID: 11400000, guid: 15b8f4264e0e36a43878ddbf3bb3f731, type: 2}
 --- !u!114 &134539996
@@ -1082,7 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: FertilitySone
+  key: FertilityStone
   propertyReferences: []
   value: {fileID: 11400000, guid: 63bee26aa4776df438f7d6fe9f07e3ee, type: 2}
 --- !u!114 &134540003
@@ -1099,8 +1114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26647.332
-    y: 24868.84
+    x: 27095.78
+    y: 24957.988
     width: 111.93
     height: 40
   nodeName: Loc Barber
@@ -1108,6 +1123,8 @@ MonoBehaviour:
   groupDescription: A series of nodes that can be executed as a group
   itemId: 0
   orderList:
+  - {fileID: 134540143}
+  - {fileID: 134540146}
   - {fileID: 134540005}
   eventHandler: {fileID: 134540004}
   isGrouped: 0
@@ -1150,7 +1167,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56d6b77eb00dafe45bc66ef633cccddc, type: 3}
   m_Name: 
@@ -1188,7 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: BarberSone
+  key: BarberStone
   propertyReferences: []
   value: {fileID: 11400000, guid: ac9405b6e1894f84e80410b95ae4034f, type: 2}
 --- !u!114 &134540007
@@ -1204,7 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: SwindonSone
+  key: SwindonStone
   propertyReferences: []
   value: {fileID: 11400000, guid: 1a4bb7dd6b5b36a44aab689ab3bbce40, type: 2}
 --- !u!114 &134540008
@@ -1432,7 +1449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 1
-  key: BlacksmithSone
+  key: BlacksmithStone
   propertyReferences: []
   value: {fileID: 11400000, guid: edb9cf2ff2cdb0741b1b6f41974fe796, type: 2}
 --- !u!114 &134540017
@@ -1550,7 +1567,7 @@ MonoBehaviour:
   orderList:
   - {fileID: 134540022}
   - {fileID: 134540073}
-  - {fileID: 134540126}
+  - {fileID: 134540164}
   eventHandler: {fileID: 134540021}
   isGrouped: 0
   groupIndex: -1
@@ -1729,8 +1746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26804.514
-    y: 24875.348
+    x: 26803.514
+    y: 24881.348
     width: 183.73
     height: 40
   nodeName: Complete Mighty Stone
@@ -1740,6 +1757,7 @@ MonoBehaviour:
   orderList:
   - {fileID: 134540107}
   - {fileID: 134540106}
+  - {fileID: 134540148}
   eventHandler: {fileID: 134540111}
   isGrouped: 0
   groupIndex: -1
@@ -2407,7 +2425,113 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentNode: {fileID: 134540069}
   FireOn: 1
---- !u!114 &134540126
+--- !u!114 &134540143
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2142403b09894fc41972a9060ec5b1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customLocation:
+    locationRef: {fileID: 134540006}
+    locationVal: {fileID: 0}
+  customPanelPrefab: {fileID: 0}
+--- !u!114 &134540144
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694a2949041e0b34c90245eb4017ed7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  sceneIndex: 1
+--- !u!114 &134540145
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9f689a21732a34489f55c1ed82a919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 27068.828
+    y: 25017.848
+    width: 163.23999
+    height: 40
+  nodeName: Barber Stone Scene
+  nodeDescription: Basic building block of a narrative engine
+  groupDescription: A series of nodes that can be executed as a group
+  itemId: 0
+  orderList:
+  - {fileID: 134540144}
+  eventHandler: {fileID: 0}
+  isGrouped: 0
+  groupIndex: -1
+  repeatable: 0
+  nodeLocation: {fileID: 0}
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  hoverStartTime: 0
+  targetUnlockNode: {fileID: 0}
+  targetKeyNode: {fileID: 0}
+  showDesc: 0
+  saveable: 0
+  NodeComplete: 0
+--- !u!114 &134540146
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c5ebc1795c0734ea5c2c8cab643c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Enter
+  description: 
+  targetNode: {fileID: 134540145}
+  hideIfVisited: 0
+  interactable: 1
+  setMenuDialogue: {fileID: 0}
+  hideThisOption: 0
+  closeMenuOnSelect: 1
+  buttonFeedback: {fileID: 0}
+  buttonSound: {fileID: 0}
+  saveSettings: 0
+--- !u!114 &134540148
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location:
+    locationRef: {fileID: 134540023}
+    locationVal: {fileID: 0}
+  status: 2
+--- !u!114 &134540164
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}

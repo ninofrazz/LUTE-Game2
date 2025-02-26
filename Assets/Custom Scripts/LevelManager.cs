@@ -33,5 +33,10 @@ namespace LoGaCulture.LUTE
 
 
         }
+
+        public void LoadScene_Nino(int sceneIndex)
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }

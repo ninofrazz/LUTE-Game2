@@ -6,7 +6,6 @@ namespace LoGaCulture.LUTE
     public class GlobalVariableComm : MonoBehaviour
     {
         public BasicFlowEngine flowEngineGlobal;
-        public bool flowEngineBool1;
         string LocationName;
 
         void Start()
