@@ -49,14 +49,6 @@
             CreateRadiusCircles();
         }
 
-        private void CreateRadiusCircles()
-        {
-            foreach (var marker in _spawnedObjects)
-            {
-                CreateRadiusCircle(marker);
-            }
-        }
-
         private void CreateRadiusCircle(LocationMarker marker)
         {
             if (marker == null || marker.RadiusRenderer == null) return;
@@ -128,6 +120,14 @@
             }
         }
 
+        public void CreateRadiusCircles()
+        {
+            foreach (var marker in _spawnedObjects)
+            {
+                CreateRadiusCircle(marker);
+            }
+        }
+
         public void ProcessLocationInfo()
         {
             if (engine == null)
@@ -149,7 +149,10 @@
             {
                 foreach (var obj in _spawnedObjects)
                 {
-                    DestroyImmediate(obj.gameObject);
+                    if (Application.isPlaying)
+                        Destroy(obj.gameObject);
+                    else
+                        DestroyImmediate(obj.gameObject);
                 }
                 _spawnedObjects.Clear();
             }

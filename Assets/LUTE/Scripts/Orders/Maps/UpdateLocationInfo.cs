@@ -30,6 +30,7 @@ namespace LoGaCulture.LUTE
             {
                 spawnOnMap.ProcessLocationInfo();
                 spawnOnMap.CreateMarkers();
+                spawnOnMap.CreateRadiusCircles();
             }
 
             Continue();
