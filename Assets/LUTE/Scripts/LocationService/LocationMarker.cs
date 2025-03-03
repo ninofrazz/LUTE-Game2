@@ -91,6 +91,10 @@ namespace LoGaCulture.LUTE
         protected void Start()
         {
             markerCanvas = GetComponentInChildren<Canvas>();
+            if (RadiusObject == null)
+            {
+                return;
+            }
 
             markerRadius = RadiusObject.GetComponent<SpriteRenderer>();
             markerRadius.color = locationInfo.defaultRadiusColour;

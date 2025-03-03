@@ -212,6 +212,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 830664824052957531, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      propertyPath: nodeRect.width
+      value: 147.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 830664824052957531, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: orderList.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -264,6 +268,10 @@ PrefabInstance:
       value: 24869.137
       objectReference: {fileID: 0}
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      propertyPath: nodeRect.width
+      value: 78.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: orderList.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -290,6 +298,10 @@ PrefabInstance:
     - target: {fileID: 4657257208514892370, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: showDesc
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657257208514892370, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      propertyPath: nodeRect.width
+      value: 115.56
       objectReference: {fileID: 0}
     - target: {fileID: 5375476576259629837, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -397,11 +409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.x
-      value: -26720.242
+      value: -25882.242
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.y
-      value: -24817.29
+      value: -24631.29
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: colourOrders
@@ -665,9 +677,6 @@ PrefabInstance:
       addedObject: {fileID: 134540109}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540111}
-    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 134540143}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
@@ -683,7 +692,10 @@ PrefabInstance:
       addedObject: {fileID: 134540148}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540164}
+      addedObject: {fileID: 134540165}
+    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 134540166}
   m_SourcePrefab: {fileID: 100100000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
 --- !u!114 &134539927 stripped
 MonoBehaviour:
@@ -1010,7 +1022,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26508.332
     y: 24868.84
-    width: 116.43
+    width: 116.37
     height: 40
   nodeName: Loc Fertility
   nodeDescription: Basic building block of a narrative engine
@@ -1346,7 +1358,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26339.055
     y: 24961.293
-    width: 128.7
+    width: 128.23001
     height: 40
   nodeName: Loc The Cove
   nodeDescription: Basic building block of a narrative engine
@@ -1468,7 +1480,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26490.055
     y: 24955.293
-    width: 197.36
+    width: 197.43
     height: 40
   nodeName: Loc The Blacksmith Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1558,7 +1570,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26809.574
     y: 24949.594
-    width: 174.68
+    width: 174.62
     height: 40
   nodeName: Loc The Mighty Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1566,8 +1578,8 @@ MonoBehaviour:
   itemId: 0
   orderList:
   - {fileID: 134540022}
+  - {fileID: 134540166}
   - {fileID: 134540073}
-  - {fileID: 134540164}
   eventHandler: {fileID: 134540021}
   isGrouped: 0
   groupIndex: -1
@@ -1746,9 +1758,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26803.514
-    y: 24881.348
-    width: 183.73
+    x: 26809.514
+    y: 24813.348
+    width: 183.6
     height: 40
   nodeName: Complete Mighty Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1758,7 +1770,7 @@ MonoBehaviour:
   - {fileID: 134540107}
   - {fileID: 134540106}
   - {fileID: 134540148}
-  eventHandler: {fileID: 134540111}
+  eventHandler: {fileID: 134540165}
   isGrouped: 0
   groupIndex: -1
   repeatable: 0
@@ -2411,20 +2423,6 @@ MonoBehaviour:
   targetNode: {fileID: 134540097}
   startIndex: 0
   callMode: 0
---- !u!114 &134540111
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d2916b1cf4a5b4391d968526553eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentNode: {fileID: 134540069}
-  FireOn: 1
 --- !u!114 &134540143
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2471,7 +2469,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 27068.828
     y: 25017.848
-    width: 163.23999
+    width: 163.17
     height: 40
   nodeName: Barber Stone Scene
   nodeDescription: Basic building block of a narrative engine
@@ -2531,7 +2529,7 @@ MonoBehaviour:
     locationRef: {fileID: 134540023}
     locationVal: {fileID: 0}
   status: 2
---- !u!114 &134540164
+--- !u!114 &134540165
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2540,9 +2538,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 134539931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b319c96f49b7a49b87135a6e3241c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 76d2916b1cf4a5b4391d968526553eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentNode: {fileID: 134540069}
+  FireOn: 1
+--- !u!114 &134540166
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location:
+    locationRef: {fileID: 134540023}
+    locationVal: {fileID: 0}
+  status: 2
 --- !u!1 &313712178
 GameObject:
   m_ObjectHideFlags: 0
