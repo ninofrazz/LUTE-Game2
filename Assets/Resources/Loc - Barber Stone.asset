@@ -30,10 +30,10 @@ MonoBehaviour:
   saveInfo: 1
   indepedentMarkerUpdating: 1
   allowClickWithoutLocation: 0
-  locationStatus: 2
+  locationStatus: 0
   infoImage: {fileID: 21300000, guid: 7d5c8123e10f2bb45af17fd97a0163e6, type: 3}
   displayName: Barber Stone
   description: This is the Barber Stone This is the Barber Stone This is the Barber
     Stone
-  nodeComplete: Loc Barber
+  nodeComplete: Loc Barber_NEW
   executeNode: 

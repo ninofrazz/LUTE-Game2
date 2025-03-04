@@ -30,9 +30,9 @@ MonoBehaviour:
   saveInfo: 1
   indepedentMarkerUpdating: 1
   allowClickWithoutLocation: 0
-  locationStatus: 2
+  locationStatus: 0
   infoImage: {fileID: 0}
   displayName: 
   description: 
-  nodeComplete: Loc Ring
+  nodeComplete: Loc Fertility
   executeNode: 

@@ -27,7 +27,7 @@ namespace LoGaCulture.LUTE
             ActiveLocationInfoPanel = null;
         }
 
-        protected void Update()
+        protected virtual void Update()
         {
             // Grouping the null checks for clarity
             if (LocationInfo == null || infoImage == null || titleText == null || bodyText == null || statusText == null)
@@ -84,11 +84,17 @@ namespace LoGaCulture.LUTE
             bodyText.text = body;
         }
 
-        public static LocationInfoPanel GetLocationInfoPanel()
+        public static LocationInfoPanel GetLocationInfoPanel(bool isNino = false)
         {
+            string prefabName = "LocationInfoPanel";
+            string fileLoc = "Prefabs/";
+            if (isNino)
+            {
+                prefabName = "LocationInfoPanel_Nino";
+            }
             if (ActiveLocationInfoPanel == null)
             {
-                GameObject prefab = Resources.Load<GameObject>("Prefabs/LocationInfoPanel");
+                GameObject prefab = Resources.Load<GameObject>(fileLoc + prefabName);
                 if (CustomLocationPrefab != null)
                 {
                     prefab = CustomLocationPrefab.gameObject;
@@ -97,7 +103,8 @@ namespace LoGaCulture.LUTE
                 {
                     GameObject go = Instantiate(prefab);
                     go.SetActive(false);
-                    go.name = "LocationInfoPanel";
+                    string name = prefabName;
+                    go.name = prefabName;
                     ActiveLocationInfoPanel = go.GetComponent<LocationInfoPanel>();
                 }
             }
@@ -126,10 +133,6 @@ namespace LoGaCulture.LUTE
             {
                 LocationInfo = info;
             }
-            //if (LocationInfo.objectInfo != null)
-            //{
-            //    SetInfo(LocationInfo.objectInfo);
-            //}
         }
     }
 }
