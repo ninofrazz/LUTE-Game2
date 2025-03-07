@@ -5,6 +5,7 @@ namespace Mapbox.Examples
     using Mapbox.Unity.MeshGeneration.Factories;
     using Mapbox.Unity.Utilities;
     using Mapbox.Utils;
+    using MoreMountains.Feedbacks;
     using System.Collections.Generic;
     using System.Diagnostics.Tracing;
     using UnityEngine;
@@ -28,6 +29,7 @@ namespace Mapbox.Examples
 
         List<GameObject> _spawnedObjects;
         Vector2d[] _locations;
+
 
         void Start()
         {
@@ -84,5 +86,7 @@ namespace Mapbox.Examples
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
             }
         }
+
+
     }
 }

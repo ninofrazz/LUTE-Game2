@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 78200668557137000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: _imagery._layerProperty.sourceOptions.layerSource.Id
-      value: mapbox://styles/mapbox/outdoors-v12
+      value: mapbox://styles/nino94/cm7wjvhbp00m701r124sgghoj
       objectReference: {fileID: 0}
     - target: {fileID: 78200668557137000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: _options.extentOptions.defaultExtents.rangeAroundCenterOptions.east
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830664824052957531, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: nodeRect.width
-      value: 147.35
+      value: 147.45999
       objectReference: {fileID: 0}
     - target: {fileID: 830664824052957531, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: orderList.Array.size
@@ -269,11 +269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: nodeRect.width
-      value: 78.03
+      value: 77.62
       objectReference: {fileID: 0}
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: orderList.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'orderList.Array.data[0]'
@@ -286,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'orderList.Array.data[2]'
       value: 
-      objectReference: {fileID: 134540089}
+      objectReference: {fileID: 134540098}
     - target: {fileID: 4303630939233821233, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'orderList.Array.data[3]'
       value: 
@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657257208514892370, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: nodeRect.width
-      value: 115.56
+      value: 115.8
       objectReference: {fileID: 0}
     - target: {fileID: 5375476576259629837, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,11 +409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.x
-      value: -25882.242
+      value: -26156.12
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: scrollPos.y
-      value: -24631.29
+      value: -24456.836
       objectReference: {fileID: 0}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: colourOrders
@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[0]'
       value: 
-      objectReference: {fileID: 134540003}
+      objectReference: {fileID: 134540069}
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedNodes.Array.data[1]'
       value: 
@@ -498,7 +498,7 @@ PrefabInstance:
     - target: {fileID: 8743389473436946330, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: 'selectedOrders.Array.data[0]'
       value: 
-      objectReference: {fileID: 134540170}
+      objectReference: {fileID: 0}
     - target: {fileID: 8911882701663352154, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       propertyPath: m_Name
       value: BasicGame
@@ -516,6 +516,7 @@ PrefabInstance:
     - {fileID: 4806665123537749153, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
     - {fileID: 9173212861755980778, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
     - {fileID: 6137769914252476755, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
+    - {fileID: 8546888014584424483, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 516969853737560230, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
@@ -686,13 +687,7 @@ PrefabInstance:
       addedObject: {fileID: 134540144}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540148}
-    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 134540165}
-    - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 134540166}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 134540168}
@@ -701,10 +696,10 @@ PrefabInstance:
       addedObject: {fileID: 134540167}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540169}
+      addedObject: {fileID: 134540170}
     - targetCorrespondingSourceObject: {fileID: 1159015562283511075, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 134540170}
+      addedObject: {fileID: 134540171}
   m_SourcePrefab: {fileID: 100100000, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
 --- !u!114 &134539927 stripped
 MonoBehaviour:
@@ -1031,7 +1026,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26508.332
     y: 24868.84
-    width: 116.37
+    width: 116.43
     height: 40
   nodeName: Loc Fertility
   nodeDescription: Basic building block of a narrative engine
@@ -1135,8 +1130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 27093.78
-    y: 24836.988
+    x: 27092.78
+    y: 24903.988
     width: 111.93
     height: 40
   nodeName: Loc Barber
@@ -1346,7 +1341,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26339.055
     y: 24961.293
-    width: 128.23001
+    width: 128.7
     height: 40
   nodeName: Loc The Cove
   nodeDescription: Basic building block of a narrative engine
@@ -1468,7 +1463,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26490.055
     y: 24955.293
-    width: 197.43
+    width: 197.36
     height: 40
   nodeName: Loc The Blacksmith Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1556,9 +1551,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26809.574
-    y: 24949.594
-    width: 174.62
+    x: 26811.574
+    y: 24959.594
+    width: 174.68
     height: 40
   nodeName: Loc The Mighty Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1566,7 +1561,6 @@ MonoBehaviour:
   itemId: 0
   orderList:
   - {fileID: 134540022}
-  - {fileID: 134540166}
   - {fileID: 134540073}
   eventHandler: {fileID: 134540021}
   isGrouped: 0
@@ -1746,9 +1740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 26809.514
-    y: 24813.348
-    width: 183.6
+    x: 26808.514
+    y: 24861.348
+    width: 183.73
     height: 40
   nodeName: Complete Mighty Stone
   nodeDescription: Basic building block of a narrative engine
@@ -1757,7 +1751,7 @@ MonoBehaviour:
   orderList:
   - {fileID: 134540107}
   - {fileID: 134540106}
-  - {fileID: 134540148}
+  - {fileID: 134540171}
   eventHandler: {fileID: 134540165}
   isGrouped: 0
   groupIndex: -1
@@ -1801,17 +1795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 
   sceneIndex: 1
---- !u!114 &134540089 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8546888014584424483, guid: 69d44f7ad440d2e4697c6536d141ba16, type: 3}
-  m_PrefabInstance: {fileID: 134539926}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90312c27b38ef774585576c19803001b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &134540097
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2455,9 +2438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 27068.828
-    y: 25017.848
-    width: 163.17
+    x: 27067.828
+    y: 24973.848
+    width: 163.23999
     height: 40
   nodeName: Barber Stone Scene
   nodeDescription: Basic building block of a narrative engine
@@ -2501,22 +2484,6 @@ MonoBehaviour:
   buttonFeedback: {fileID: 0}
   buttonSound: {fileID: 0}
   saveSettings: 0
---- !u!114 &134540148
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  location:
-    locationRef: {fileID: 134540023}
-    locationVal: {fileID: 0}
-  status: 2
 --- !u!114 &134540165
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2531,22 +2498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentNode: {fileID: 134540069}
   FireOn: 1
---- !u!114 &134540166
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  location:
-    locationRef: {fileID: 134540023}
-    locationVal: {fileID: 0}
-  status: 2
 --- !u!114 &134540167
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2582,8 +2533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 27252.242
-    y: 24832.29
+    x: 27077.242
+    y: 24828.29
     width: 144.95
     height: 40
   nodeName: Loc Barber_NEW
@@ -2592,7 +2543,6 @@ MonoBehaviour:
   itemId: 0
   orderList:
   - {fileID: 134540170}
-  - {fileID: 134540169}
   eventHandler: {fileID: 134540167}
   isGrouped: 0
   groupIndex: -1
@@ -2604,40 +2554,8 @@ MonoBehaviour:
   targetUnlockNode: {fileID: 0}
   targetKeyNode: {fileID: 0}
   showDesc: 0
-  saveable: 0
+  saveable: 1
   NodeComplete: 0
---- !u!114 &134540169
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134539931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d6b77eb00dafe45bc66ef633cccddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 599590581}
-  characterPortrait: {fileID: 21300000, guid: 2d75fad76854be747a42dc54cd0b9ef2, type: 3}
-  characterName: 
-  characterNameColour:
-    serializedVersion: 2
-    rgba: 0
-  storyText: This is barber stone
-  typingSpeed: 40
-  extendPrevious: 0
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  fadeWhenDone: 1
-  allowLineSkip: 1
-  waitForClick: 1
-  timeToWait: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setDialogueBox: {fileID: 0}
-  showButton: 1
 --- !u!114 &134540170
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2653,11 +2571,27 @@ MonoBehaviour:
   customLocation:
     locationRef: {fileID: 134540006}
     locationVal: {fileID: 0}
-  customPanelPrefab: {fileID: 0}
+  customPanelPrefab: {fileID: 2605275116982661154, guid: 1d1608d2a00df6f4ca37a59d8a605abe, type: 3}
   executeNode: {fileID: 134540145}
   buttonEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &134540171
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134539931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125d74a5559eabd4b8b14360277e4dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location:
+    locationRef: {fileID: 134540023}
+    locationVal: {fileID: 0}
+  status: 2
 --- !u!1 &313712178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,9 +2625,9 @@ MonoBehaviour:
   _locationStrings:
   - 51.427182 , -1.8533276
   - 51.429110 , -1.8540528
-  _spawnScale: 1
-  heightOffset: 1
-  _markerPrefab: {fileID: 1842662222376499782, guid: 549ee81460de73140b2aee97dd52ec98, type: 3}
+  _spawnScale: 10
+  heightOffset: 2
+  _markerPrefab: {fileID: 2610335842248360619, guid: b31b1e8c912c6e3479bdfcabeeb4ee48, type: 3}
 --- !u!4 &313712180
 Transform:
   m_ObjectHideFlags: 0

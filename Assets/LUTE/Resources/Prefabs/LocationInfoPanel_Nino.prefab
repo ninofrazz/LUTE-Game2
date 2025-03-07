@@ -174,7 +174,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: 1280, y: 240}
+  m_SizeDelta: {x: 1520, y: 240}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &9173793048107078820
 CanvasRenderer:
@@ -687,6 +687,7 @@ MonoBehaviour:
   partialTextLength: 0.3
   defaultTitle: Unknown Landmark
   panelButton: {fileID: 2055280831071248326}
+  disableOnButtonClick: 1
 --- !u!1 &6136352476526945876
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: start event here
+  m_text: Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -854,8 +855,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 143.75
+  m_fontSizeBase: 143.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -932,7 +933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 274}
   m_SizeDelta: {x: 0, y: 592}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4846296501804168327

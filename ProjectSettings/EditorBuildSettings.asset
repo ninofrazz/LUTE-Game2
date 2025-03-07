@@ -12,6 +12,7 @@ EditorBuildSettings:
     path: Assets/Custom Scenes/MightyStoneScene.unity
     guid: 543d59f4664eab14889dd10c99ccdfab
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a3b44f079399f1e40bf8b146f79bb5bc, type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 4329e4e5071ac414ca4e4ea6d2bb52a4, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 47a20badea08148488f988a12b53f0a1, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 77df519c8d15c1d468964515d187cb3f, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bd1a9c16e2c977e449f752bf7959eca6, type: 2}
   m_UseUCBPForAssetBundles: 0
