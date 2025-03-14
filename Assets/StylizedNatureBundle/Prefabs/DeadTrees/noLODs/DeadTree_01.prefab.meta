@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 37743c9ec4ee31045bad1b0d7425e1d6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/DeadTrees/noLODs/DeadTree_01.prefab
+  uploadId: 456438

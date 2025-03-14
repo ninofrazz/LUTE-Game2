@@ -7,6 +7,7 @@ TagManager:
   - ToolCam
   - Map
   - DragPiece
+  - Draggable
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - 3DItems
-  - 
+  - VFX
   - 
   - 
   - 

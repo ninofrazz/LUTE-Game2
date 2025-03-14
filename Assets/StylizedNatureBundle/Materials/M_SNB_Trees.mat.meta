@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65bdea545f2a34e4d8491941cd4b76d8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Materials/M_SNB_Trees.mat
+  uploadId: 456438

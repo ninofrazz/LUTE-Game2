@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82c1969f8059c5043ad4f117cd02abb0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Vegetation/Flower_16_LOD.prefab
+  uploadId: 456438

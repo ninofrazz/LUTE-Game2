@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e9aa94b7854f7f4d8bf69448ee6b3be
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Shaders/SNB_Trees.shader
+  uploadId: 456438

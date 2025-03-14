@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 72b937d87e1419f40861e1e6fd9b6e20
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Trees/LODs/Tree_01_a_LOD.prefab
+  uploadId: 456438

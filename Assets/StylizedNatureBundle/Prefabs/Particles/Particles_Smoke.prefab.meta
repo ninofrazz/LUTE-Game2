@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15e1e4e1816796e498da80063abd2501
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Particles/Particles_Smoke.prefab
+  uploadId: 456438

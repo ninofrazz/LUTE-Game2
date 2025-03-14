@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class HitChecker : MonoBehaviour
 {
-    public Material[] materials;
+    public GameObject[] particlesystems;
     public bool Hit;
-    void Start()
-    {
 
-    }
+    ParticleSystem[] childParticleSystems;
 
     // Update is called once per frame
     void Update()
     {
-        if (Hit)
+        if (particlesystems.Length == 2)
         {
-            // Assign a random material to the hit object
-            GetComponent<Renderer>().material.color = Color.green;
-
-        }
-        else
-        {
-            GetComponent<Renderer>().material.color = Color.red;
+            if (Hit)
+            {
+                particlesystems[0].SetActive(false);
+                particlesystems[1].SetActive(true);
+            }
+            else
+            {
+                particlesystems[1].SetActive(false);
+                particlesystems[0].SetActive(true);
+            }
         }
     }
-
 }

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1f5312e2845fc8043a8f85df1d840121
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Shaders/SNB_Foliage_Simple.shader
+  uploadId: 456438

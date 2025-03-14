@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 48ffda675aa0afa4f9eec3a5d5487aeb
+timeCreated: 1485181015
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Demo/PostProcessing/Resources/Bluenoise64/LICENSE.txt
+  uploadId: 456438

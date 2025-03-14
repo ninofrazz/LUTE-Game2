@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 51080302671f7aa4283d4ce5e04d5e68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Trees/noLODs_Particles/Tree_03_c_P.prefab
+  uploadId: 456438

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c1864acbe95f45d45936f15d9195d669
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Demo/PostProcessing/PostProcessProfiles/SNB_PostProcess_07.asset
+  uploadId: 456438

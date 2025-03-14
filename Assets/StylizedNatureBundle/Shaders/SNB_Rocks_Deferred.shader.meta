@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4fb2ea5b4df0fc74297f9ce0b3f48824
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Shaders/SNB_Rocks_Deferred.shader
+  uploadId: 456438

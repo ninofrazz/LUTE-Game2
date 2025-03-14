@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8ff2e191822429643a7296a615cea8fc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Particles/TreesParticles/Particles_Tree01_FallingLeaves_h.prefab
+  uploadId: 456438

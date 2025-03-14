@@ -231,6 +231,11 @@ namespace Mapbox.Unity.Map
 				_layerProperty.rasterOptions.HasChanged = true;
 			}
 		}
-		#endregion
-	}
+
+        internal void SetProperties(Action<object> value)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+    }
 }

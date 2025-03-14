@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ab27e836807fcc64db3674d7ecc11d49
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Demo/Materials/M_SNB_Terrain_Library_01.mat
+  uploadId: 456438

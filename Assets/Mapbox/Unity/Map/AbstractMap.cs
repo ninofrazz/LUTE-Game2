@@ -23,6 +23,7 @@ namespace Mapbox.Unity.Map
     [ExecuteAlways]
     public class AbstractMap : MonoBehaviour, IMap
     {
+
         #region Private Fields
 
         [SerializeField] private MapOptions _options = new MapOptions();

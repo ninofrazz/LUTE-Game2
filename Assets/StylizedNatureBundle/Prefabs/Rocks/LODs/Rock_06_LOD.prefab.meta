@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3d5c08ed1583d1842ab30df591fa9b95
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Rocks/LODs/Rock_06_LOD.prefab
+  uploadId: 456438

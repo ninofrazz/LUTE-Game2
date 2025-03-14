@@ -25,7 +25,7 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 01894255c27927e4a8c007cc1b00a883, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1.5, y: 1.5}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats: []
@@ -33,3 +33,4 @@ Material:
     - _PlaneColor: {r: 1, g: 1, b: 1, a: 0}
     - _TexTintColor: {r: 1, g: 1, b: 1, a: 0.7372549}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

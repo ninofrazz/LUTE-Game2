@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e974a9d5d32ed7944a91488ac20d319a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Materials/M_SNB_DeadTrees.mat
+  uploadId: 456438

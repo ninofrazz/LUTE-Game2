@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.ARFoundation;
 
 public class ObjectInteraction : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ObjectInteraction : MonoBehaviour
     public Camera arCam;         // Assign the AR Camera in the Inspector
     public InputActionReference tap; // Reference to the input action for tap
     public GameObject completeText;
+    public GameObject scanText;
+    public ARPlaneManager FloorScanner;
 
 
 
@@ -84,12 +87,21 @@ public class ObjectInteraction : MonoBehaviour
 
         if (allActive)
         {
-            LevelComplete = true;
-            completeText.gameObject.SetActive(true);
+            FloorScanner.enabled = true;
+            scanText.SetActive(true);
+
         }
         else
         {
             //completeText.gameObject.SetActive(false);
+        }
+
+        if (LevelComplete)
+        {
+
+            scanText.SetActive(false);
+            completeText.SetActive(true);
+            FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
         }
 
     }

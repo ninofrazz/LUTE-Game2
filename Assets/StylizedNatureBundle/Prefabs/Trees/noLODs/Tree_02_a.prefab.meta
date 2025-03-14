@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bb32d2cfb5857bc429f2689584025a51
+labels:
+- environment
+- flower
+- grass
+- nature
+- stylized
+- trees
+- vegetation
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Trees/noLODs/Tree_02_a.prefab
+  uploadId: 456438

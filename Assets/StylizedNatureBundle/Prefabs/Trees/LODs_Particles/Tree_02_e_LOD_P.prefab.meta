@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b7b5d7178eb93d459926b50f404c028
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Trees/LODs_Particles/Tree_02_e_LOD_P.prefab
+  uploadId: 456438

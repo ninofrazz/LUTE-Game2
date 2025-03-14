@@ -10,6 +10,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using UnityEngine;
+    using UnityEngine.UIElements;
 
     public class SpawnOnMap : MonoBehaviour
     {
@@ -22,6 +23,8 @@
         [SerializeField] protected DirectionsFactory _directionPrefab;
 
         [SerializeField] private GameObject _radiusCirclePrefab;
+        [SerializeField] private GameObject FlowerParticlePrefab;
+
 
         private List<LocationMarker> _spawnedObjects;
         private List<LUTELocationInfo> _locationData = new List<LUTELocationInfo>();
@@ -79,6 +82,7 @@
             }
 
             radiusCircle.transform.localScale = new Vector3(scale, scale, 1);
+
         }
 
         private float CalculateMetersPerPixel(float zoomLevel, Vector3 centerPosition)
@@ -492,6 +496,27 @@
         {
             UpdateMarkers();
             UpdateTracker();
+            //UpdateFlowerParticleScale(FlowerParticlePrefab, FlowerParticlePrefab.transform.position);
+        }
+
+        private void UpdateFlowerParticleScale(GameObject flowerParticle, Vector3 centerPosition)
+        {
+            // Calculate scale based on zoom level
+            float zoomLevel = _map.Zoom;
+            float metersPerPixel = CalculateMetersPerPixel(zoomLevel, centerPosition);
+            float pixelScale = _radiusInMeters / metersPerPixel;
+
+            // Apply scale, ensuring it's within acceptable bounds
+            float scale = Mathf.Clamp(pixelScale, MIN_SCALE, MAX_SCALE);
+
+            // Check for NaN or Infinity
+            if (float.IsNaN(scale) || float.IsInfinity(scale))
+            {
+                scale = 1f; // Fallback to a default scale
+            }
+
+            flowerParticle.transform.localScale = new Vector3(scale, scale, scale);
+            Debug.Log("Updating");
         }
 
         private void UpdateRadiusCircle(int index)

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ab92b6ed5b4863344b760bbda35765b3
+labels:
+- environment
+- flower
+- grass
+- nature
+- stylized
+- trees
+- vegetation
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/Vegetation/Plant_04_d.prefab
+  uploadId: 456438

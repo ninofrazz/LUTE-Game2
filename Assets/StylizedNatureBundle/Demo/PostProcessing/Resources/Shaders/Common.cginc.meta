@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eb88496804341c648b32a75843d92ccb
+timeCreated: 1465205118
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Demo/PostProcessing/Resources/Shaders/Common.cginc
+  uploadId: 456438

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 36440bc51e8046248a3b764909c59ae8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Prefabs/GrassFlower/GrassFlower_03_LOD.prefab
+  uploadId: 456438

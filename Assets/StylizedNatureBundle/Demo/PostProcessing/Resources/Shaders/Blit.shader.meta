@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7d89469544dfa214eabdbf37fca76f40
+timeCreated: 1474297975
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135352
+  packageName: Stylized Nature Bundle
+  packageVersion: 1.4
+  assetPath: Assets/StylizedNatureBundle/Demo/PostProcessing/Resources/Shaders/Blit.shader
+  uploadId: 456438

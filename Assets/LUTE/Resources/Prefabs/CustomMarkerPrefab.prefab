@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3348332465149263130}
   - component: {fileID: 3589469722129003669}
   - component: {fileID: 6067892912135492101}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: TextMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8559514904495585917, guid: 9b5cceeaef4cbf5428e63d32049ddb46, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 5790737691150376730, guid: d6ed17cc88af03542adfd3f2762a73e0, type: 3}
       propertyPath: m_Name
       value: LocRadius
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790737691150376730, guid: d6ed17cc88af03542adfd3f2762a73e0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5790737691150376730, guid: d6ed17cc88af03542adfd3f2762a73e0, type: 3}
       propertyPath: m_IsActive
