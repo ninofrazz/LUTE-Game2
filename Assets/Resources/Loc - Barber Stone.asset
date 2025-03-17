@@ -29,13 +29,13 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
-  locationStatus: 2
+  allowClickWithoutLocation: 1
+  locationStatus: 0
   infoImage: {fileID: 8118122760177058576, guid: 3de4f12506b7a6b4db8d5363ab70e9d6, type: 3}
   displayName: Barber Stone
   description: ' During his 1930s excavations, Alexander Keiller discovered the skeleton
     of a man under Stone No. 9. Believed to be a barber-surgeon, he may have been
     trapped by the stone. The burial included a leather purse with scissors and coins,
     dating the find.'
-  nodeComplete: Loc Barber
+  nodeComplete: 
   executeNode: 

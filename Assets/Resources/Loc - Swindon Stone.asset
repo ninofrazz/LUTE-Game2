@@ -29,12 +29,12 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
+  allowClickWithoutLocation: 1
   locationStatus: 0
   infoImage: {fileID: 9046992801589442793, guid: cb9a30f6068b11840b873262f2bf555b, type: 3}
   displayName: Swindon Stone
   description: This massive stone, located near the road to Swindon, is also known
     as the Diamond Stone due to its unique shape. Its impressive presence makes it
     a notable feature of the Avebury landscape.
-  nodeComplete: Loc Swindon
+  nodeComplete: 
   executeNode: 

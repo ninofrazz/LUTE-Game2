@@ -29,12 +29,12 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
-  locationStatus: 1
+  allowClickWithoutLocation: 1
+  locationStatus: 0
   infoImage: {fileID: 4699211702344962843, guid: eebea7e7f22322c4e9557e837752af43, type: 3}
   displayName: The Cove
   description: The Cove stones have recently been stabilized, revealing the "female"
     stone may weigh nearly 100 tons, making it the largest surviving stone. The "male"
     stone has also been adjusted to a more upright position for safety.
-  nodeComplete: Loc The Cove
+  nodeComplete: 
   executeNode: 

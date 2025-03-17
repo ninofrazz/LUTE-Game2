@@ -15,6 +15,7 @@ public class ObjectInteraction : MonoBehaviour
     public InputActionReference tap; // Reference to the input action for tap
     public GameObject completeText;
     public GameObject scanText;
+    public GameObject goBackButton;
     public ARPlaneManager FloorScanner;
 
 
@@ -98,10 +99,10 @@ public class ObjectInteraction : MonoBehaviour
 
         if (LevelComplete)
         {
-
+            FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
             scanText.SetActive(false);
             completeText.SetActive(true);
-            FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
+            goBackButton.SetActive(true);
         }
 
     }

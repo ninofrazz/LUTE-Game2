@@ -29,13 +29,13 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
-  locationStatus: 2
+  allowClickWithoutLocation: 1
+  locationStatus: 0
   infoImage: {fileID: 2129976939761803705, guid: 427da2224940e3045a02cbf48ef7189f, type: 3}
   displayName: The Blacksmith Stone
   description: "Known as \"The Blacksmith's Stone,\" Stone No. 24 is an assemblage
     of fragments recovered from a forge by archaeologist Alexander Keiller. Its restoration
     showcases the stone's turbulent history and Keiller\u2019s commitment to preserving
     Avebury\u2019s ancient heritage for future generations."
-  nodeComplete: Loc The Blacksmith Stone
+  nodeComplete: 
   executeNode: 

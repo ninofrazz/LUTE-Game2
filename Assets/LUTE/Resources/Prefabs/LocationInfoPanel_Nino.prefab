@@ -171,10 +171,10 @@ RectTransform:
   - {fileID: 1359689407939755554}
   m_Father: {fileID: 1691605953026282544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: 1520, y: 240}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -350}
+  m_SizeDelta: {x: 0, y: -2276.9998}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &9173793048107078820
 CanvasRenderer:
@@ -682,9 +682,9 @@ MonoBehaviour:
   hideDescription: 0
   unlockFeedback: {fileID: 0}
   defaultImage: {fileID: 21300000, guid: f8cbee2d5a0500f4681c5505739bdb56, type: 3}
-  partialTint: {r: 0.714, g: 0.714, b: 0.714, a: 0.5882353}
+  partialTint: {r: 1, g: 1, b: 1, a: 1}
   statusText: {fileID: 5950962932523747155}
-  partialTextLength: 0.3
+  partialTextLength: 10
   defaultTitle: Unknown Landmark
   panelButton: {fileID: 2055280831071248326}
   disableOnButtonClick: 1
@@ -797,7 +797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7096457173148144371
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 114.12266, y: 258.28027, z: 109.63794, w: 0.7002974}
+  m_margin: {x: 114.12266, y: 258.28027, z: 109.63794, w: -1375.006}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1076,8 +1076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 324.99994}
-  m_SizeDelta: {x: -400, y: -1749.9999}
+  m_AnchoredPosition: {x: 0, y: 275}
+  m_SizeDelta: {x: -400, y: -1650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6872709361642069582
 CanvasRenderer:

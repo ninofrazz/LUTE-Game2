@@ -29,7 +29,7 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
+  allowClickWithoutLocation: 1
   locationStatus: 0
   infoImage: {fileID: -435552987955175538, guid: e1d5ed100acc7324fb68dbf41207835f, type: 3}
   displayName: Devil's Chair
@@ -37,5 +37,5 @@ MonoBehaviour:
     If smoke billows, the devil is present. It is said that to summon him, one must
     run around the stone a hundred times counterclockwise. It\u2019s also known as
     the Goddess Chair."
-  nodeComplete: Loc Devils
+  nodeComplete: 
   executeNode: 

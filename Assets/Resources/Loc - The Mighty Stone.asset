@@ -29,13 +29,13 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
-  locationStatus: 2
+  allowClickWithoutLocation: 1
+  locationStatus: 0
   infoImage: {fileID: 7679690840341853785, guid: a3a1cfe3e3f19b94faeb0cac7631ca83, type: 3}
   displayName: The Mighty Stone
   description: Known as "The Mighty Stone," this impressive monolith marks the East
     Entrance of Avebury. Surrounded by stunning tree roots, it creates a natural
     wonder. J.R.R. Tolkien, author of The Lord of the Rings, found inspiration in
     its ancient power.
-  nodeComplete: Loc The Mighty Stone
+  nodeComplete: 
   executeNode: 

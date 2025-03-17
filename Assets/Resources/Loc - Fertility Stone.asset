@@ -29,13 +29,13 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
-  locationStatus: 1
+  allowClickWithoutLocation: 1
+  locationStatus: 0
   infoImage: {fileID: 6684532170325476067, guid: 7c312bf6f6f89f44993913696558585d, type: 3}
   displayName: Fertility Stone
   description: One of the outer stones of the Southern Inner Circle has a shape that
     looks like a flower, which has led some people to call it the "Vulva Stone."
     Because many of the stones at Avebury are connected to nature and life, it's
     thought that this stone was chosen for its interesting shape.
-  nodeComplete: Loc Fertility
+  nodeComplete: 
   executeNode: 

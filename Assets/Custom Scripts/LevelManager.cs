@@ -20,16 +20,12 @@ namespace Mapbox.Unity.Map
 
         void Start()
         {
-
             flowEngine = GameObject.Find("Flow Engine").GetComponent<BasicFlowEngine>();
-
-
         }
 
         // Update is called once per frame
         void Update()
         {
-
             if (flowEngine.GetBooleanVariable("MapCompleted") == true)
             {
 
@@ -41,7 +37,6 @@ namespace Mapbox.Unity.Map
             else
             {
                 map.ImageLayer.SetLayerSource(mapIncomplete);
-
             }
         }
         public void LoadScene_Nino(int sceneIndex)

@@ -26,7 +26,7 @@ namespace LoGaCulture.LUTE
         }
 
 
-        void Completed()
+        public void Completed()
         {
             flowEngineGlobal.SetBooleanVariable(LocationName, true);
         }

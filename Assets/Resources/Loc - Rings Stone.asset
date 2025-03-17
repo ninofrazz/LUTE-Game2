@@ -29,7 +29,7 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 0
+  allowClickWithoutLocation: 1
   locationStatus: 0
   infoImage: {fileID: 261473727855999264, guid: 86f280272e7172649b92d3701e87761d, type: 3}
   displayName: Ring Stone
@@ -37,5 +37,5 @@ MonoBehaviour:
     the broken stump of "The Ring Stone" was re-erected by Alexander Keiller. Described
     by William Stukeley as having a hole, it remains enigmatic, with evidence suggesting
     a potential partner 20 meters to the west.
-  nodeComplete: Loc Ring
+  nodeComplete: 
   executeNode: 

@@ -29,10 +29,10 @@ MonoBehaviour:
   interactable: 1
   saveInfo: 1
   indepedentMarkerUpdating: 1
-  allowClickWithoutLocation: 1
+  allowClickWithoutLocation: 0
   locationStatus: 0
   infoImage: {fileID: 0}
   displayName: 
   description: 
-  nodeComplete: Location Example
+  nodeComplete: Location INFO
   executeNode: 

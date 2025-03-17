@@ -7,10 +7,14 @@ public class MouseHoldHandler : MonoBehaviour
     public GameObject draggedObject = null; // Object being dragged
     private Camera mainCamera;
     private float initialZPosition; // To store the initial Z position of the object
+    DragAndDropReceiver receiver;
+    public Color HoldColor;
+    public Color notHoldColor;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        receiver = FindAnyObjectByType<DragAndDropReceiver>();
     }
 
     private void Update()
@@ -40,6 +44,12 @@ public class MouseHoldHandler : MonoBehaviour
             inputPosition.z = initialZPosition;
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(inputPosition);
             draggedObject.transform.position = worldPosition;
+
+            //spere change color
+            if (!receiver.isTriggered)
+            {
+                receiver.GetComponent<Renderer>().material.color = HoldColor;
+            }
         }
 
         // Check for input press to start dragging
@@ -52,6 +62,10 @@ public class MouseHoldHandler : MonoBehaviour
             else if (Mouse.current.leftButton.isPressed)
             {
                 StartHold();
+            }
+            if (!receiver.isTriggered)
+            {
+                receiver.GetComponent<Renderer>().material.color = notHoldColor;
             }
         }
 

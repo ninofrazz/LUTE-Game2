@@ -10,27 +10,26 @@ public class TimedHit : MonoBehaviour
     HitChecker checker;
     public ObjectInteraction objectInteraction;
     public TMP_Text counterText;
-    public Image radialBar;
-
+    public Image radialBarPrefab; // Reference to the radial bar prefab
+    private Image radialBarInstance; // Instance of the radial bar
 
     public float duration;
     float timer = 0f;
     public bool Triggered;
     public bool canContinue;
 
-
     void Start()
     {
         checker = GetComponent<HitChecker>();
         objectInteraction = FindAnyObjectByType<ObjectInteraction>();
         counterText = GameObject.Find("Counter").GetComponent<TMP_Text>();
-        radialBar = GameObject.Find("RadialBar").GetComponent<Image>();
 
+        // Instantiate the radial bar
+        radialBarInstance = Instantiate(radialBarPrefab, FindObjectOfType<Canvas>().transform);
+        radialBarInstance.enabled = false;
 
         canContinue = true;
-        radialBar.enabled = false;
         RefreshTimer();
-
     }
 
     public void RefreshTimer()
@@ -38,15 +37,16 @@ public class TimedHit : MonoBehaviour
         timer = duration;
         checker.Hit = false;
         counterText.text = timer.ToString("N00");
-        radialBar.fillAmount = timer / duration;
+        if (radialBarInstance != null)
+        {
+            radialBarInstance.fillAmount = timer / duration;
+        }
     }
 
     void Update()
     {
-
         if (checker.Hit)
         {
-
             // Update the counter text with the rounded interpolated value
             counterText.text = timer.ToString("N00");
         }
@@ -59,12 +59,11 @@ public class TimedHit : MonoBehaviour
         if (checker.Hit == true)
         {
             StartTimer();
-            radialBar.transform.position = transform.position;
+            radialBarInstance.transform.position = transform.position;
         }
 
         Transform cameraTransform = Camera.main.transform;
-
-        radialBar.transform.LookAt(cameraTransform);
+        radialBarInstance.transform.LookAt(cameraTransform);
     }
 
     public void StartTimer()
@@ -72,26 +71,39 @@ public class TimedHit : MonoBehaviour
         if (timer > 0 && canContinue)
         {
             timer -= Time.deltaTime;
-            radialBar.fillAmount = timer / duration;
-            radialBar.enabled = true;
+            if (radialBarInstance != null)
+            {
+                radialBarInstance.fillAmount = timer / duration;
+                radialBarInstance.enabled = true;
+            }
         }
-
 
         if (timer <= 0f)
         {
             counterText.text = 0.ToString("N00");
-            radialBar.enabled = false;
+            if (radialBarInstance != null)
+            {
+                radialBarInstance.enabled = false;
+            }
             RefreshTimer();
         }
     }
 
     public void StopTimer()
     {
-        radialBar.enabled = false;
+        if (radialBarInstance != null)
+        {
+            radialBarInstance.enabled = false;
+        }
         canContinue = false;
     }
 
-
-
-
+    void OnDestroy()
+    {
+        // Clean up the radial bar instance when the object is destroyed
+        if (radialBarInstance != null)
+        {
+            Destroy(radialBarInstance.gameObject);
+        }
+    }
 }

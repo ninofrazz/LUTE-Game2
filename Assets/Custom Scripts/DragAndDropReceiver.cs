@@ -1,40 +1,46 @@
 using UnityEngine;
 
-namespace LoGaCulture.LUTE
+
+public class DragAndDropReceiver : MonoBehaviour
 {
-    public class DragAndDropReceiver : MonoBehaviour
+    public bool isTriggered;
+    public Color objectColor;
+
+    HitChecker hitChecker;
+    void Start()
     {
-        public bool isTriggered;
+        hitChecker = GameObject.FindObjectOfType<HitChecker>();
+        objectColor = gameObject.GetComponent<Renderer>().material.color;
 
-        HitChecker hitChecker;
-        void Start()
-        {
-            hitChecker = GameObject.FindObjectOfType<HitChecker>();
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (isTriggered)
-            {
-                hitChecker.Hit = true;
-            }
-        }
-
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "Draggable")
-            {
-                isTriggered = true;
-
-                if (gameObject.GetComponent<Renderer>() != null)
-                {
-                    gameObject.GetComponent<Renderer>().material.color = new Color(0f, 2f, 0f, 0.3f);
-                }
-            }
-        }
 
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isTriggered)
+        {
+            hitChecker.Hit = true;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "Draggable")
+        {
+            isTriggered = true;
+
+            Renderer renderer = gameObject.GetComponent<Renderer>();
+
+            if (gameObject.GetComponent<Renderer>() != null)
+            {
+                objectColor = new Color(0f, 2f, 0f, 0.3f);
+                renderer.material.color = objectColor;
+            }
+        }
+    }
+
 }
+

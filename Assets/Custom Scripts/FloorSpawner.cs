@@ -1,3 +1,4 @@
+using LoGaCulture.LUTE;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -135,10 +136,10 @@ public class FloorSpawner : MonoBehaviour
             {
                 Debug.LogError("No flower prefabs assigned!");
             }
-            FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
         }
-
+        FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
         Debug.Log($"Flowers placed randomly on the plane. Total flowers: {flowerQuantity}");
         objectInteractionScript.LevelComplete = true;
+        FindAnyObjectByType<GlobalVariableComm>().Completed();
     }
 }

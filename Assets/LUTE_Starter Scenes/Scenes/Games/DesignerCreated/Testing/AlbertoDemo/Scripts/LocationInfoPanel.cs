@@ -10,7 +10,7 @@ namespace LoGaCulture.LUTE
         [Tooltip("The tint to apply to the image when the location is partially discovered")]
         [SerializeField] protected Color partialTint;
         [SerializeField] protected TextMeshProUGUI statusText;
-        [Range(0.1f, 1.0f)]
+        [Range(0.1f, 10f)]
         [Tooltip("The length of the partial text to display as a percent")]
         [SerializeField] protected float partialTextLength = 0.3f;
         [SerializeField] protected string defaultTitle = "Unknown Landmark";
@@ -50,28 +50,33 @@ namespace LoGaCulture.LUTE
                     break;
 
                 case LUTELocationInfo.LocationStatus.Visited:
-                    //sprite = ObjectInfo.ObjectIcon;
                     sprite = LocationInfo.LocationImage;
                     color = partialTint;
-                    //title = ObjectInfo.ObjectName;
                     title = LocationInfo.DisplayName;
                     status = "Status: Partially Discovered";
 
                     // Ensure fullText is valid before substring calculation
-                    //string fullText = ObjectInfo.ShortDescription ?? string.Empty;
                     string fullText = LocationInfo.Description ?? string.Empty;
-                    int lengthToShow = (int)(fullText.Length * partialTextLength);
+
+                    // Calculate the length to show based on partialTextLength
+                    int lengthToShow = (int)(fullText.Length * Mathf.Clamp01(partialTextLength / 10f));
                     lengthToShow = Mathf.Clamp(lengthToShow, 0, fullText.Length); // Ensure valid substring length
-                    body = fullText.Substring(0, lengthToShow) + "...";
+
+                    // If partialTextLength is 10f, show the full text without truncation
+                    if (partialTextLength >= 10f)
+                    {
+                        body = fullText;
+                    }
+                    else
+                    {
+                        body = fullText.Substring(0, lengthToShow) + "...";
+                    }
                     break;
 
                 case LUTELocationInfo.LocationStatus.Completed:
-                    //sprite = ObjectInfo.ObjectIcon;
                     sprite = LocationInfo.LocationImage;
-                    //title = ObjectInfo.ObjectName;
                     title = LocationInfo.DisplayName;
                     status = "Status: Fully Discovered";
-                    //body = ObjectInfo.ShortDescription;
                     body = LocationInfo.Description;
                     break;
             }
@@ -83,7 +88,6 @@ namespace LoGaCulture.LUTE
             statusText.text = status;
             bodyText.text = body;
         }
-
         public static LocationInfoPanel GetLocationInfoPanel(bool isNino = false)
         {
             string prefabName = "LocationInfoPanel";

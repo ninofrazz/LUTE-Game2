@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Custom Scenes/BasicGame.unity
+    path: Assets/Custom Scenes/- BasicGame.unity
     guid: 1c32c43aecfee754b9cd100f85c1d5c6
   - enabled: 1
     path: Assets/Custom Scenes/MightyStoneScene.unity
     guid: 543d59f4664eab14889dd10c99ccdfab
+  - enabled: 1
+    path: Assets/Custom Scenes/FertilityStoneScene.unity
+    guid: 6816564da1c9aad46ab2661fe6f2dd84
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 47a20badea08148488f988a12b53f0a1, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 77df519c8d15c1d468964515d187cb3f, type: 2}
