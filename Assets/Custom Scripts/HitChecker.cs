@@ -7,11 +7,14 @@ public class HitChecker : MonoBehaviour
 
     ParticleSystem[] childParticleSystems;
 
+
+    public MouseHoldHandler mouseHoldHandlerscript;
+
     // Update is called once per frame
     void Update()
     {
 
-        var mouseHoldHandlerscript = FindAnyObjectByType<MouseHoldHandler>();
+        mouseHoldHandlerscript = FindAnyObjectByType<MouseHoldHandler>();
 
         if (particlesystems.Length >= 2)
         {

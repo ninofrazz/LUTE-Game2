@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6073938098540446750}
   - component: {fileID: 1795065447611863669}
   m_Layer: 5
-  m_Name: RadialBar (1)
+  m_Name: RadialBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

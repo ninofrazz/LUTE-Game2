@@ -7,14 +7,14 @@ public class MouseHoldHandler : MonoBehaviour
     public GameObject draggedObject = null; // Object being dragged
     private Camera mainCamera;
     private float initialZPosition; // To store the initial Z position of the object
-    DragAndDropReceiver receiver;
+    public DragAndDropReceiver[] receiver;
     public Color HoldColor;
     public Color notHoldColor;
 
     private void Awake()
     {
         mainCamera = Camera.main;
-        receiver = FindAnyObjectByType<DragAndDropReceiver>();
+        receiver = FindObjectsOfType<DragAndDropReceiver>();
     }
 
     private void Update()
@@ -46,9 +46,16 @@ public class MouseHoldHandler : MonoBehaviour
             draggedObject.transform.position = worldPosition;
 
             //spere change color
-            if (!receiver.isTriggered)
+            foreach (var rec in receiver)
             {
-                receiver.GetComponent<Renderer>().material.color = HoldColor;
+                if (!rec.isTriggered) // Ensure `isTriggered` is a public field or property in `DragAndDropReceiver`
+                {
+                    Renderer renderer = rec.GetComponent<Renderer>();
+                    if (renderer != null)
+                    {
+                        renderer.material.color = HoldColor;
+                    }
+                }
             }
         }
 
@@ -63,9 +70,16 @@ public class MouseHoldHandler : MonoBehaviour
             {
                 StartHold();
             }
-            if (!receiver.isTriggered)
+            foreach (var rec in receiver)
             {
-                receiver.GetComponent<Renderer>().material.color = notHoldColor;
+                if (!rec.isTriggered) // Ensure `isTriggered` is a public field or property in `DragAndDropReceiver`
+                {
+                    Renderer renderer = rec.GetComponent<Renderer>();
+                    if (renderer != null)
+                    {
+                        renderer.material.color = notHoldColor;
+                    }
+                }
             }
         }
 

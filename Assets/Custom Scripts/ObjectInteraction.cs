@@ -16,9 +16,10 @@ public class ObjectInteraction : MonoBehaviour
     public GameObject completeText;
     public GameObject scanText;
     public GameObject goBackButton;
+    public GameObject FlowerButton;
     public ARPlaneManager FloorScanner;
 
-
+    private bool _uiToggled; // Track if the UI has already been toggled
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class ObjectInteraction : MonoBehaviour
         {
             Debug.LogWarning("AR Camera is not assigned in the Inspector.");
         }
+
+        // Initialize UI elements
+        completeText.SetActive(false);
+        goBackButton.SetActive(false);
+        FlowerButton.SetActive(false);
+        _uiToggled = false; // Reset the toggle flag
     }
 
     private void OnEnable()
@@ -55,8 +62,6 @@ public class ObjectInteraction : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit) && hit.collider.tag != "Draggable")
             {
-
-
                 HitChecker hitCheckerScript = hit.collider.GetComponent<HitChecker>();
                 if (hitCheckerScript != null)
                 {
@@ -68,10 +73,6 @@ public class ObjectInteraction : MonoBehaviour
             {
             }
         }
-
-
-
-
 
         HitChecker[] allInstances = FindObjectsByType<HitChecker>(FindObjectsSortMode.None);
 
@@ -90,7 +91,6 @@ public class ObjectInteraction : MonoBehaviour
         {
             FloorScanner.enabled = true;
             scanText.SetActive(true);
-
         }
         else
         {
@@ -101,11 +101,20 @@ public class ObjectInteraction : MonoBehaviour
         {
             FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
             scanText.SetActive(false);
-            completeText.SetActive(true);
-            goBackButton.SetActive(true);
         }
 
+        if (LevelComplete && !_uiToggled)
+        {
+            ToggleUIElements(true);
+            _uiToggled = true; // Ensure this only happens once
+
+        }
     }
 
+    void ToggleUIElements(bool state)
+    {
+        completeText.SetActive(state);
+        goBackButton.SetActive(state);
+        FlowerButton.SetActive(state);
+    }
 }
-

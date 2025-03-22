@@ -1,46 +1,58 @@
 using UnityEngine;
 
-
 public class DragAndDropReceiver : MonoBehaviour
 {
     public bool isTriggered;
     public Color objectColor;
 
-    HitChecker hitChecker;
-    void Start()
+    private void Start()
     {
-        hitChecker = GameObject.FindObjectOfType<HitChecker>();
-        objectColor = gameObject.GetComponent<Renderer>().material.color;
-
-
+        // Cache the initial color of the receiver object
+        objectColor = GetComponent<Renderer>().material.color;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isTriggered)
-        {
-            hitChecker.Hit = true;
-        }
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.tag == "Draggable")
+        // Check if the colliding object has the "Draggable" tag
+        if (other.CompareTag("Draggable"))
         {
             isTriggered = true;
 
-            Renderer renderer = gameObject.GetComponent<Renderer>();
-
-            if (gameObject.GetComponent<Renderer>() != null)
+            // Get the Renderer component of the draggable object
+            Renderer renderer = GetComponent<Renderer>();
+            if (renderer != null)
             {
-                objectColor = new Color(0f, 2f, 0f, 0.3f);
+                // Change the color of the draggable object
+                objectColor = new Color(0f, 1f, 0f, 0.3f); // Use values between 0 and 1
                 renderer.material.color = objectColor;
+            }
+
+            // Get the HitChecker component of the draggable object
+            HitChecker hitChecker = other.GetComponent<HitChecker>();
+            if (hitChecker != null)
+            {
+                hitChecker.Hit = true;
+            }
+            else
+            {
+                Debug.LogWarning("HitChecker component not found on the draggable object.");
             }
         }
     }
 
-}
+    private void OnTriggerExit(Collider other)
+    {
+        // Reset isTriggered when the object exits the trigger zone
+        if (other.CompareTag("Draggable"))
+        {
+            isTriggered = false;
 
+            // Get the HitChecker component of the draggable object
+            HitChecker hitChecker = other.GetComponent<HitChecker>();
+            if (hitChecker != null)
+            {
+                hitChecker.Hit = false;
+            }
+        }
+    }
+}
