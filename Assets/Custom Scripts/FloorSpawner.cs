@@ -139,7 +139,7 @@ public class FloorSpawner : MonoBehaviour
         }
         FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
         Debug.Log($"Flowers placed randomly on the plane. Total flowers: {flowerQuantity}");
-        objectInteractionScript.LevelComplete = true;
+        objectInteractionScript.FlowerSpawned = true;
         FindAnyObjectByType<GlobalVariableComm>().Completed();
     }
 }

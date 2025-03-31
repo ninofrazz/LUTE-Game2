@@ -28,7 +28,7 @@ MonoBehaviour:
   radiusIncrease: 7
   interactable: 1
   saveInfo: 1
-  indepedentMarkerUpdating: 1
+  indepedentMarkerUpdating: 0
   allowClickWithoutLocation: 1
   locationStatus: 0
   infoImage: {fileID: 9046992801589442793, guid: cb9a30f6068b11840b873262f2bf555b, type: 3}

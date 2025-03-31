@@ -13,8 +13,8 @@
         [Range(1, 20)]
         public float _panSpeed = 1.0f;
 
-        [SerializeField]
-        float _zoomSpeed = 0.25f;
+        //[SerializeField]
+        //float _zoomSpeed = 0.25f;  // Commented out - we'll use camera movement instead
 
         [SerializeField]
         public Camera _referenceCamera;
@@ -28,13 +28,13 @@
         bool _useDegreeMethod;
 
         [SerializeField] protected bool allowPanning;
-        [SerializeField] protected bool allowZooming;
+        //[SerializeField] protected bool allowZooming;  // Commented out - we'll handle zoom differently
         [SerializeField] protected bool allowTilting;
 
-        [Range(0, 21)]
-        [SerializeField] protected float minZoomLevel = 0.0f;
-        [Range(0, 21)]
-        [SerializeField] protected float maxZoomLevel = 21.0f;
+        //[Range(0, 21)]
+        //[SerializeField] protected float minZoomLevel = 0.0f;  // Commented out
+        //[Range(0, 21)]
+        //[SerializeField] protected float maxZoomLevel = 21.0f;  // Commented out
 
         [SerializeField] float sensitivityZ = 2f;   // Horizontal sensitivity
 
@@ -47,9 +47,13 @@
         private bool _shouldDrag;
         private bool _isInitialized = false;
         private Plane _groundPlane = new Plane(Vector3.up, 0);
-        // Store the current rotation of the camera
         private float rotationZ = 0f;  // Vertical rotation
         private Vector3 defaultRotation;
+
+        // New variables for camera zoom
+        [SerializeField] float cameraZoomSpeed = 5f;
+        [SerializeField] float minCameraDistance = 10f;
+        [SerializeField] float maxCameraDistance = 1000f;
 
         public static QuadTreeCameraMovement _instance;
 
@@ -69,7 +73,6 @@
             {
                 _isInitialized = true;
             };
-
         }
 
         void Start()
@@ -99,7 +102,6 @@
 
             if (!_dragStartedOnUI)
             {
-
                 if (Input.touchSupported && Input.touchCount > 0)
                 {
                     HandleTouch();
@@ -113,15 +115,15 @@
 
         void HandleMouseAndKeyBoard()
         {
-            // zoom
-            float scrollDelta = 0.0f;
-            scrollDelta = Input.GetAxis("Mouse ScrollWheel");
-            ZoomMapUsingTouchOrMouse(scrollDelta);
-
+            // Handle camera zoom instead of map zoom
+            float scrollDelta = Input.GetAxis("Mouse ScrollWheel");
+            if (scrollDelta != 0f)
+            {
+                ZoomCamera(scrollDelta);
+            }
 
             //pan keyboard
             float xMove = Input.GetAxis("Horizontal");
-            //Returns true if any key was pressed.
             float zMove = Input.GetAxis("Vertical");
 
             if (allowPanning)
@@ -131,13 +133,11 @@
             if (Input.GetMouseButton(1))
             {
                 float mouseX = Input.GetAxis("Mouse X");
-                float mouseY = Input.GetAxis("Mouse Y"); // useful if you want up/down panning
+                float mouseY = Input.GetAxis("Mouse Y");
 
-                // Use the unified method to handle camera rotation and zoom
                 if (allowTilting)
                     PanOrRotateCamera(mouseX);
             }
-
 
             //pan mouse
             if (allowPanning)
@@ -146,8 +146,6 @@
 
         void HandleTouch()
         {
-            float zoomFactor = 0.0f;
-            //pinch to zoom.
             switch (Input.touchCount)
             {
                 case 1:
@@ -159,61 +157,63 @@
                         float touchX = touch.deltaPosition.x;
                         float touchY = touch.deltaPosition.y;
 
-                        // Use the unified method to handle camera rotation with touch input
                         if (allowTilting)
-                            PanOrRotateCamera(touchX);  // No zoom for single touch
+                            PanOrRotateCamera(touchX);
                     }
                     break;
                 case 2:
                     {
-                        // Store both touches.
+                        // Handle pinch-to-zoom for camera
                         Touch touchZero = Input.GetTouch(0);
                         Touch touchOne = Input.GetTouch(1);
 
-                        // Find the position in the previous frame of each touch.
                         Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
                         Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-                        // Find the magnitude of the vector (the distance) between the touches in each frame.
                         float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
                         float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 
-                        // Find the difference in the distances between each frame.
-                        zoomFactor = 0.01f * (touchDeltaMag - prevTouchDeltaMag);
+                        float zoomFactor = 0.01f * (touchDeltaMag - prevTouchDeltaMag);
+                        ZoomCamera(zoomFactor);
                     }
-                    if (allowZooming)
-                        ZoomMapUsingTouchOrMouse(zoomFactor);
                     break;
                 default:
                     break;
             }
         }
 
+        void ZoomCamera(float zoomDelta)
+        {
+            // Move camera forward/backward to simulate zoom
+            float newPosition = _referenceCamera.transform.localPosition.y - zoomDelta * cameraZoomSpeed;
+            newPosition = Mathf.Clamp(newPosition, minCameraDistance, maxCameraDistance);
+            _referenceCamera.transform.localPosition = new Vector3(
+                _referenceCamera.transform.localPosition.x,
+                newPosition,
+                _referenceCamera.transform.localPosition.z);
+        }
+
         void PanOrRotateCamera(float zInput)
         {
-            // Adjust the camera rotation based on the input
-            rotationZ += zInput * sensitivityZ;  // Horizontal movement (pan or rotate)
-
-            // Apply the new rotation to the camera
+            rotationZ += zInput * sensitivityZ;
             _referenceCameraGame.transform.localEulerAngles = new Vector3(defaultRotation.x, defaultRotation.y, rotationZ);
         }
 
         public void ZoomMapUsingTouchOrMouse(float zoomFactor)
-        {
+        {/*
             var zoom = Mathf.Max(minZoomLevel, Mathf.Min(_mapManager.Zoom + zoomFactor * _zoomSpeed, maxZoomLevel));
             if (Math.Abs(zoom - _mapManager.Zoom) > 0.0f)
             {
                 _mapManager.UpdateMap(_mapManager.CenterLatitudeLongitude, zoom);
             }
+            */
         }
+
+
         public void PanMapUsingKeyBoard(float xMove, float zMove)
         {
             if (Math.Abs(xMove) > 0.0f || Math.Abs(zMove) > 0.0f)
             {
-                // Get the number of degrees in a tile at the current zoom level.
-                // Divide it by the tile width in pixels ( 256 in our case)
-                // to get degrees represented by each pixel.
-                // Keyboard offset is in pixels, therefore multiply the factor with the offset to move the center.
                 float factor = _panSpeed * (Conversions.GetTileScaleInDegrees((float)_mapManager.CenterLatitudeLongitude.x, _mapManager.AbsoluteZoom));
 
                 var latitudeLongitude = new Vector2d(_mapManager.CenterLatitudeLongitude.x + zMove * factor * 2.0f, _mapManager.CenterLatitudeLongitude.y + xMove * factor * 4.0f);
@@ -244,20 +244,15 @@
             if (Input.GetMouseButtonUp(1))
             {
                 var mousePosScreen = Input.mousePosition;
-                //assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
-                //http://answers.unity3d.com/answers/599100/view.html
                 mousePosScreen.z = _referenceCamera.transform.localPosition.y;
                 var pos = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 
                 var latlongDelta = _mapManager.WorldToGeoPosition(pos);
-                // Debug.Log("Latitude: " + latlongDelta.x + " Longitude: " + latlongDelta.y);
             }
 
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 var mousePosScreen = Input.mousePosition;
-                //assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
-                //http://answers.unity3d.com/answers/599100/view.html
                 mousePosScreen.z = _referenceCamera.transform.localPosition.y;
                 _mousePosition = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 
@@ -310,8 +305,6 @@
             if (_dragStartedOnUI)
             {
                 var mousePosScreen = e.mousePosition;
-                //assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
-                //http://answers.unity3d.com/answers/599100/view.html
                 var newLocVec = new Vector3(mousePosScreen.x, mousePosScreen.y, _referenceCamera.transform.localPosition.y);
                 _mousePosition = _referenceCamera.ScreenToWorldPoint(newLocVec);
 
@@ -360,8 +353,6 @@
             if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 var mousePosScreen = Input.mousePosition;
-                //assign distance of camera to ground plane to z, otherwise ScreenToWorldPoint() will always return the position of the camera
-                //http://answers.unity3d.com/answers/599100/view.html
                 mousePosScreen.z = _referenceCamera.transform.localPosition.y;
                 _mousePosition = _referenceCamera.ScreenToWorldPoint(mousePosScreen);
 
@@ -388,12 +379,7 @@
                     {
                         if (null != _mapManager)
                         {
-                            // Get the number of degrees in a tile at the current zoom level.
-                            // Divide it by the tile width in pixels ( 256 in our case)
-                            // to get degrees represented by each pixel.
-                            // Mouse offset is in pixels, therefore multiply the factor with the offset to move the center.
                             float factor = _panSpeed * Conversions.GetTileScaleInDegrees((float)_mapManager.CenterLatitudeLongitude.x, _mapManager.AbsoluteZoom) / _mapManager.UnityTileSize;
-
                             var latitudeLongitude = new Vector2d(_mapManager.CenterLatitudeLongitude.x + offset.z * factor, _mapManager.CenterLatitudeLongitude.y + offset.x * factor);
                             _mapManager.UpdateMap(latitudeLongitude, _mapManager.Zoom);
                         }

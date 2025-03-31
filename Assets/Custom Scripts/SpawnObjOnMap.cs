@@ -38,7 +38,7 @@ namespace Mapbox.Examples
         // Define constants for scaling
         private const float MIN_SCALE = 0.1f;
         private const float MAX_SCALE = 1000f;
-        private const float _radiusInMeters = 10f; // Define a default radius in meters
+        // private const float _radiusInMeters = 10f; // Define a default radius in meters
 
         void Start()
         {
@@ -108,7 +108,7 @@ namespace Mapbox.Examples
                 spawnedObject.transform.position = worldPosition; // Use world position
 
                 // Update scale for the FlowerParticlePrefab
-                UpdateRadiusCircleScale(spawnedObject, worldPosition);
+                // UpdateRadiusCircleScale(spawnedObject, worldPosition);
             }
 
             for (int a = 0; a < locInfo.Length; a++)
@@ -121,6 +121,7 @@ namespace Mapbox.Examples
             }
         }
 
+        /*
         private void UpdateRadiusCircleScale(GameObject radiusCircle, Vector3 centerPosition)
         {
             if (radiusCircle == null || _map == null) return;
@@ -157,5 +158,6 @@ namespace Mapbox.Examples
 
             return metersPerPixel;
         }
+        */
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoID: 9
   Position: 51.429215, -1.851605
-  Name: The Mighty Stone
+  Name: 'The Eastern Portal Stone '
   Sprite: {fileID: 21300000, guid: 93a2368be3ed45740870912b34a49ee3, type: 3}
   InProgressSprite: {fileID: 21300000, guid: 31f30a94ce27dd7459e1d263684c7ab1, type: 3}
   CompletedSprite: {fileID: 21300000, guid: d764252b019bccb48bc36a1869796494, type: 3}
@@ -28,14 +28,13 @@ MonoBehaviour:
   radiusIncrease: 7
   interactable: 1
   saveInfo: 1
-  indepedentMarkerUpdating: 1
+  indepedentMarkerUpdating: 0
   allowClickWithoutLocation: 1
   locationStatus: 0
   infoImage: {fileID: 7679690840341853785, guid: a3a1cfe3e3f19b94faeb0cac7631ca83, type: 3}
-  displayName: The Mighty Stone
-  description: Known as "The Mighty Stone," this impressive monolith marks the East
-    Entrance of Avebury. Surrounded by stunning tree roots, it creates a natural
-    wonder. J.R.R. Tolkien, author of The Lord of the Rings, found inspiration in
-    its ancient power.
+  displayName: 'The Eastern Portal Stone '
+  description: "This lichen-streaked sentinel slumbers in Avebury's outer circle\u2014a
+    weathered giant guarding Neolithic secrets. Some say it leans as if listening
+    to underground whispers, its pocked surface inspiring Tolkien's ancient monoliths."
   nodeComplete: 
   executeNode: 

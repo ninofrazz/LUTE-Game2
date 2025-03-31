@@ -4,6 +4,8 @@ Shader "SNB_Nature/SNB_Foliage"
 {
 	Properties
 	{
+		 _GrowthScale("Growth Scale", Float) = 1.0
+         _GrowthMask("Growth Mask", Float) = 0.5 // Growth
 		_MainTex("MainTex", 2D) = "white" {}
 		_EmissionRMetallicGSmoothnessB("Emission (R), Metallic (G), Smoothness (B)", 2D) = "black" {}
 		_Specularity("Specularity", Range( 0 , 3)) = 1.5
@@ -60,6 +62,9 @@ Shader "SNB_Nature/SNB_Foliage"
 			half3 Translucency;
 		};
 
+		 float _GrowthScale; // Growth
+         float _GrowthMask; // Growth
+
 		uniform float _WindTrunkSpeed;
 		uniform float _WindTrunkAmplitude;
 		uniform float _WindFoliageSpeed;
@@ -114,18 +119,25 @@ Shader "SNB_Nature/SNB_Foliage"
 		}
 
 
-		void vertexDataFunc( inout appdata_full v, out Input o )
-		{
-			UNITY_INITIALIZE_OUTPUT( Input, o );
-			float temp_output_130_0 = ( _Time.y * ( 2.0 * _WindTrunkSpeed ) );
-			float4 appendResult141 = (float4(( ( sin( temp_output_130_0 ) * _WindTrunkAmplitude ) * v.color.b ) , 0.0 , ( v.color.b * ( ( _WindTrunkAmplitude * 0.5 ) * cos( temp_output_130_0 ) ) ) , 0.0));
-			float3 ase_worldPos = mul( unity_ObjectToWorld, v.vertex );
-			float4 appendResult149 = (float4(ase_worldPos.x , ase_worldPos.y , ase_worldPos.z , 0.0));
-			float2 panner93 = ( ( _Time.y * _WindFoliageSpeed ) * float2( 2,2 ) + appendResult149.xy);
-			float simplePerlin2D101 = snoise( panner93 );
-			float3 ase_vertexNormal = v.normal.xyz;
-			v.vertex.xyz += ( appendResult141 + float4( ( simplePerlin2D101 * _WindFoliageAmplitude * ase_vertexNormal * v.color.r ) , 0.0 ) ).rgb;
-		}
+		void vertexDataFunc(inout appdata_full v, out Input o)
+{
+    UNITY_INITIALIZE_OUTPUT(Input, o);
+
+    // Existing wind calculations...
+    float temp_output_130_0 = (_Time.y * (2.0 * _WindTrunkSpeed));
+    float4 appendResult141 = (float4((sin(temp_output_130_0) * _WindTrunkAmplitude) * v.color.b, 0.0, (v.color.b * ((_WindTrunkAmplitude * 0.5) * cos(temp_output_130_0))), 0.0));
+    float3 ase_worldPos = mul(unity_ObjectToWorld, v.vertex);
+    float4 appendResult149 = (float4(ase_worldPos.x, ase_worldPos.y, ase_worldPos.z, 0.0));
+    float2 panner93 = ((_Time.y * _WindFoliageSpeed) * float2(2, 2) + appendResult149.xy);
+    float simplePerlin2D101 = snoise(panner93);
+    float3 ase_vertexNormal = v.normal.xyz;
+
+    // Apply growth effect
+    v.vertex.xyz *= _GrowthScale; // Add this line
+
+    // Add wind effects
+    v.vertex.xyz += (appendResult141 + float4((simplePerlin2D101 * _WindFoliageAmplitude * ase_vertexNormal * v.color.r), 0.0)).rgb;
+}
 
 		inline half4 LightingStandardCustom(SurfaceOutputStandardCustom s, half3 viewDir, UnityGI gi )
 		{
@@ -160,27 +172,27 @@ Shader "SNB_Nature/SNB_Foliage"
 			#endif
 		}
 
-		void surf( Input i , inout SurfaceOutputStandardCustom o )
-		{
-			float2 uv_NormalMap = i.uv_texcoord * _NormalMap_ST.xy + _NormalMap_ST.zw;
-			o.Normal = UnpackScaleNormal( tex2D( _NormalMap, uv_NormalMap ), _NormalStrength );
-			float2 uv_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
-			float4 tex2DNode36 = tex2D( _MainTex, uv_MainTex );
-			o.Albedo = tex2DNode36.rgb;
-			float2 uv_EmissionRMetallicGSmoothnessB = i.uv_texcoord * _EmissionRMetallicGSmoothnessB_ST.xy + _EmissionRMetallicGSmoothnessB_ST.zw;
-			float4 tex2DNode106 = tex2D( _EmissionRMetallicGSmoothnessB, uv_EmissionRMetallicGSmoothnessB );
-			o.Emission = ( tex2DNode106.r * _EmissionStrength * tex2DNode36 ).rgb;
-			o.Smoothness = saturate( ( tex2DNode106.b * _Specularity ) );
-			#ifdef _ISTRANSLUCENT_ON
-				float staticSwitch167 = 1.0;
-			#else
-				float staticSwitch167 = 0.0;
-			#endif
-			float3 temp_cast_2 = (staticSwitch167).xxx;
-			o.Translucency = temp_cast_2;
-			o.Alpha = 1;
-			clip( tex2DNode36.a - _Cutoff );
-		}
+		void surf(Input i, inout SurfaceOutputStandardCustom o)
+        {
+            // Existing texture sampling and calculations...
+            float2 uv_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
+            float4 tex2DNode36 = tex2D(_MainTex, uv_MainTex);
+            float2 uv_EmissionRMetallicGSmoothnessB = i.uv_texcoord * _EmissionRMetallicGSmoothnessB_ST.xy + _EmissionRMetallicGSmoothnessB_ST.zw;
+            float4 tex2DNode106 = tex2D(_EmissionRMetallicGSmoothnessB, uv_EmissionRMetallicGSmoothnessB);
+
+            // Calculate growth mask
+         float growthMask = step(1.0 - i.uv_texcoord.y, _GrowthMask); // Inverted growth mask // Clip based on UV Y-coordinate
+
+            // Discard fragments outside the growth mask
+            clip(growthMask - 0.5); // Discard if growthMask is less than 0.5
+
+            // Assign surface properties
+            o.Albedo = tex2DNode36.rgb;
+            o.Emission = (tex2DNode106.r * _EmissionStrength * tex2DNode36).rgb;
+            o.Smoothness = saturate((tex2DNode106.b * _Specularity));
+            o.Alpha = 1;
+            clip(tex2DNode36.a - _Cutoff);
+        }
 
 		ENDCG
 	}

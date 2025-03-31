@@ -8,19 +8,27 @@ using UnityEngine.XR.ARFoundation;
 
 public class ObjectInteraction : MonoBehaviour
 {
-    public bool LevelComplete;
+    public bool FlowerSpawned;
     public bool allActive;
-    // Assign materials in the Inspector
-    public Camera arCam;         // Assign the AR Camera in the Inspector
+    public Camera arCam; // Assign the AR Camera in the Inspector
     public InputActionReference tap; // Reference to the input action for tap
     public GameObject completeText;
     public GameObject scanText;
     public GameObject goBackButton;
     public GameObject FlowerButton;
+    public GameObject SolvePuzzle;
     public ARPlaneManager FloorScanner;
+    public FlowerGrowth flowerGrowth;
+    public DragAndDropReceiver[] dragAndDropReceivers;
 
     private bool _uiToggled; // Track if the UI has already been toggled
+    private float _currentCompletionProgress = 0f; // Current interpolated progress
+    private float _targetCompletionProgress = 0f; // Target progress value
+    private float _smoothingSpeed = 5f; // Speed of interpolation (adjust as needed)
+    private bool FlowerSpawnToggled;
+    private bool solvePuzzleActivated = false; // Track if SolvePuzzle has been activated
 
+    public HitChecker[] testAllInstances;
     private void Start()
     {
         if (arCam == null)
@@ -28,11 +36,47 @@ public class ObjectInteraction : MonoBehaviour
             Debug.LogWarning("AR Camera is not assigned in the Inspector.");
         }
 
+        flowerGrowth = FindAnyObjectByType<FlowerGrowth>();
+
         // Initialize UI elements
         completeText.SetActive(false);
         goBackButton.SetActive(false);
         FlowerButton.SetActive(false);
         _uiToggled = false; // Reset the toggle flag
+
+
+
+        FloorScanner.enabled = true;
+        scanText.SetActive(true);
+
+        StartCoroutine(DelayedStart(0.01f));
+    }
+
+    IEnumerator DelayedStart(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+
+        testAllInstances = FindObjectsByType<HitChecker>(FindObjectsSortMode.None);
+
+
+        foreach (var instance in testAllInstances)
+        {
+
+            instance.GetComponent<Collider>().enabled = false;
+            instance.particlesystems[0].SetActive(false);
+        }
+
+        dragAndDropReceivers = FindObjectsByType<DragAndDropReceiver>(FindObjectsSortMode.None);
+
+        if (dragAndDropReceivers != null)
+        {
+            foreach (var receiver in dragAndDropReceivers)
+            {
+                receiver.gameObject.SetActive(false);
+
+            }
+        }
+
     }
 
     private void OnEnable()
@@ -49,8 +93,8 @@ public class ObjectInteraction : MonoBehaviour
 
     void Update()
     {
-        // Use 'performed' instead of 'triggered' for reliable input detection
-        if (tap.action.triggered) // Triggered works fine here too, but 'performed' might be more reliable
+        // Handle tap input
+        if (tap.action.triggered)
         {
             // Read the touch or mouse position
             Vector2 touchPosition = tap.action.ReadValue<Vector2>();
@@ -66,49 +110,103 @@ public class ObjectInteraction : MonoBehaviour
                 if (hitCheckerScript != null)
                 {
                     hitCheckerScript.Hit = true;
-                    //chnge the color from here
+                    // Change the color from here
                 }
-            }
-            else
-            {
             }
         }
 
+        // Get all HitChecker instances
         HitChecker[] allInstances = FindObjectsByType<HitChecker>(FindObjectsSortMode.None);
 
+        int totalInstances = allInstances.Length; // Total number of instances
+        int activeInstances = 0; // Counter for active instances
+
         allActive = true;
+
         // Check each instance individually
         foreach (var instance in allInstances)
         {
-            if (!instance.Hit)
+            if (instance.Hit)
             {
-                allActive = false;
-                break; // No need to check further if one is false
+                activeInstances++; // Increment the active instances counter
+            }
+            else
+            {
+                allActive = false; // Set allActive to false if any instance is not hit
+
+                if (FlowerSpawned)
+                {
+                    SolvePuzzle.SetActive(true);
+                }
             }
         }
 
-        if (allActive)
+        // Calculate the target completion progress (activeInstances / totalInstances)
+        _targetCompletionProgress = (float)activeInstances / totalInstances;
+
+        // Smoothly interpolate the current progress towards the target progress
+        _currentCompletionProgress = Mathf.Lerp(_currentCompletionProgress, _targetCompletionProgress, Time.deltaTime * _smoothingSpeed);
+
+        // Update the FlowerGrowth script with the interpolated progress
+        if (flowerGrowth != null)
         {
-            FloorScanner.enabled = true;
-            scanText.SetActive(true);
+            flowerGrowth.growthProgress = _currentCompletionProgress;
+        }
+
+
+        // Toggle UI elements based on allActive
+        if (allActive && FlowerSpawned)
+        {
+            if (!_uiToggled) // Check if the UI has not been toggled yet
+            {
+                ToggleUIElements(true); // Toggle the UI elements
+                _uiToggled = true; // Set the flag to true to prevent future toggles
+            }
         }
         else
         {
-            //completeText.gameObject.SetActive(false);
+            if (_uiToggled) // Reset the flag if allActive or LevelComplete becomes false
+            {
+                ToggleUIElements(false); // Disable the UI elements
+                _uiToggled = false; // Reset the toggle flag
+            }
         }
 
-        if (LevelComplete)
+
+        // Additional logic for LevelComplete
+        if (FlowerSpawned)
         {
             FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
             scanText.SetActive(false);
+
+            FlowerSpawnToggled = true;
         }
 
-        if (LevelComplete && !_uiToggled)
+        // Activate SolvePuzzle and other logic only once
+        if (FlowerSpawnToggled && !solvePuzzleActivated)
         {
-            ToggleUIElements(true);
-            _uiToggled = true; // Ensure this only happens once
 
+            solvePuzzleActivated = true; // Set the flag to true to prevent future activations
         }
+
+        if (FlowerSpawnToggled == true)
+            foreach (var instance in testAllInstances)
+            {
+                if (dragAndDropReceivers != null)
+                {
+                    foreach (var receiver in dragAndDropReceivers)
+                    {
+                        receiver.gameObject.SetActive(true);
+
+                    }
+                }
+                instance.GetComponent<Collider>().enabled = true;
+                instance.particlesystems[0].SetActive(true);
+
+                FlowerSpawnToggled = false;
+            }
+
+
     }
 
     void ToggleUIElements(bool state)
@@ -116,5 +214,7 @@ public class ObjectInteraction : MonoBehaviour
         completeText.SetActive(state);
         goBackButton.SetActive(state);
         FlowerButton.SetActive(state);
+
+        SolvePuzzle.SetActive(false);
     }
 }

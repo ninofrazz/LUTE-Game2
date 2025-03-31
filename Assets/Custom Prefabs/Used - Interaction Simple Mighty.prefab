@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 396929377050136412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.9999998, z: 0.040738076}
+  m_LocalPosition: {x: 0, y: 0, z: -2.959262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73,6 +73,7 @@ MonoBehaviour:
   - {fileID: 387467829618016745}
   - {fileID: 7821422553017292695}
   Hit: 0
+  mouseHoldHandlerscript: {fileID: 0}
 --- !u!114 &4964350545838113228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +161,7 @@ MonoBehaviour:
   - {fileID: 9103663210160792340}
   - {fileID: 8615251690519153306}
   Hit: 0
+  mouseHoldHandlerscript: {fileID: 0}
 --- !u!114 &3875315754137392167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +299,7 @@ MonoBehaviour:
   - {fileID: 7039752720373176824}
   - {fileID: 623966727778282577}
   Hit: 0
+  mouseHoldHandlerscript: {fileID: 0}
 --- !u!114 &6523440730897183447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,6 +387,7 @@ MonoBehaviour:
   - {fileID: 1101574385560324264}
   - {fileID: 2328703793774291982}
   Hit: 0
+  mouseHoldHandlerscript: {fileID: 0}
 --- !u!114 &2863461862458233696
 MonoBehaviour:
   m_ObjectHideFlags: 0

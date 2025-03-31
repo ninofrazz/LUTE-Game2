@@ -15,7 +15,7 @@ MonoBehaviour:
   infoID: 2
   Position: 51.42856861319775, -1.8542802086417438
   Name: INFO
-  Sprite: {fileID: 21300000, guid: 0958bf3dd415e974e90f978b50a845ee, type: 3}
+  Sprite: {fileID: 21300000, guid: 3d69bf4b1f575644db3fcca0cb5c60f8, type: 3}
   InProgressSprite: {fileID: 21300000, guid: 3d69bf4b1f575644db3fcca0cb5c60f8, type: 3}
   CompletedSprite: {fileID: 21300000, guid: 3d69bf4b1f575644db3fcca0cb5c60f8, type: 3}
   Color: {r: 0, g: 0, b: 0, a: 1}
@@ -28,7 +28,7 @@ MonoBehaviour:
   radiusIncrease: 0
   interactable: 1
   saveInfo: 1
-  indepedentMarkerUpdating: 1
+  indepedentMarkerUpdating: 0
   allowClickWithoutLocation: 0
   locationStatus: 0
   infoImage: {fileID: 0}

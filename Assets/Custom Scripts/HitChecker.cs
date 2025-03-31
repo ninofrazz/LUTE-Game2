@@ -31,7 +31,7 @@ public class HitChecker : MonoBehaviour
             else
             {
                 particlesystems[1].SetActive(false);
-                particlesystems[0].SetActive(true);
+                // particlesystems[0].SetActive(true);
             }
 
 
@@ -44,7 +44,7 @@ public class HitChecker : MonoBehaviour
                 }
                 if (!mouseHoldHandlerscript.isHolding & !Hit)
                 {
-                    particlesystems[0].SetActive(true);
+                    // particlesystems[0].SetActive(false);
                     particlesystems[2].SetActive(false);
                 }
             }
