@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class MouseHoldHandler : MonoBehaviour
 {
-    public bool isHolding = false; // Tracks whether the mouse or touch is being held down
-    public GameObject draggedObject = null; // Object being dragged
+    public bool isHolding = false;
+    public GameObject draggedObject = null;
     private Camera mainCamera;
-    private float initialZPosition; // To store the initial Z position of the object
+    private float initialZPosition;
     public DragAndDropReceiver[] receiver;
     public Color HoldColor;
     public Color notHoldColor;
@@ -15,108 +15,134 @@ public class MouseHoldHandler : MonoBehaviour
     {
         mainCamera = Camera.main;
         receiver = FindObjectsOfType<DragAndDropReceiver>();
+        SetReceiverColors(notHoldColor);
     }
 
     private void Update()
     {
-        // Handle drag movement
-        if (isHolding && draggedObject != null)
+        // Handle input release to stop dragging
+        if (isHolding)
         {
-            // Get mouse or touch position (check for touchscreen input)
-            Vector3 inputPosition;
+            bool inputReleased = false;
+
+            // Check for touch release
             if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
             {
-                // If there is a touch, use the primary touch position
-                inputPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+                // Touch is still active
             }
+            // Check for mouse release (editor testing)
             else if (Mouse.current != null && Mouse.current.leftButton.isPressed)
             {
-                // If no touch, check for mouse input
-                inputPosition = Mouse.current.position.ReadValue();
+                // Mouse is still active
             }
             else
             {
+                inputReleased = true;
+            }
+
+            if (inputReleased)
+            {
                 EndHold();
-                return; // No valid input, so return
+                return;
             }
 
-            // Maintain the original Z position of the object during dragging
-            inputPosition.z = initialZPosition;
-            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(inputPosition);
-            draggedObject.transform.position = worldPosition;
-
-            //spere change color
-            foreach (var rec in receiver)
+            // Handle drag movement
+            if (draggedObject != null)
             {
-                if (!rec.isTriggered) // Ensure `isTriggered` is a public field or property in `DragAndDropReceiver`
+                Vector3 inputPosition = GetInputPosition();
+                if (inputPosition == Vector3.negativeInfinity)
                 {
-                    Renderer renderer = rec.GetComponent<Renderer>();
-                    if (renderer != null)
-                    {
-                        renderer.material.color = HoldColor;
-                    }
+                    EndHold();
+                    return;
                 }
+
+                inputPosition.z = initialZPosition;
+                Vector3 worldPosition = mainCamera.ScreenToWorldPoint(inputPosition);
+                draggedObject.transform.position = worldPosition;
+
+                SetReceiverColors(HoldColor);
             }
         }
-
-        // Check for input press to start dragging
-        if (!isHolding)
+        else // Not holding
         {
-            if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+            // Check for new input to start dragging
+            if (IsNewInputStarted())
             {
                 StartHold();
             }
-            else if (Mouse.current.leftButton.isPressed)
+            else
             {
-                StartHold();
-            }
-            foreach (var rec in receiver)
-            {
-                if (!rec.isTriggered) // Ensure `isTriggered` is a public field or property in `DragAndDropReceiver`
-                {
-                    Renderer renderer = rec.GetComponent<Renderer>();
-                    if (renderer != null)
-                    {
-                        renderer.material.color = notHoldColor;
-                    }
-                }
+                SetReceiverColors(notHoldColor);
             }
         }
+    }
 
-        // Check for input release to stop dragging
+    private Vector3 GetInputPosition()
+    {
+        // Priority to touch input
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+        {
+            return Touchscreen.current.primaryTouch.position.ReadValue();
+        }
+        // Fallback to mouse input (for editor testing)
+        else if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+        {
+            return Mouse.current.position.ReadValue();
+        }
 
+        return Vector3.negativeInfinity;
+    }
+
+    private bool IsNewInputStarted()
+    {
+        // Check for new touch
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            return true;
+        }
+        // Check for new mouse click (editor testing)
+        else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void StartHold()
     {
-        // Check if an object is under the cursor or touch point
-        Vector3 inputPosition;
-        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
-        {
-            inputPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        }
-        else
-        {
-            inputPosition = Mouse.current.position.ReadValue();
-        }
+        Vector3 inputPosition = GetInputPosition();
+        if (inputPosition == Vector3.negativeInfinity) return;
 
         Ray ray = mainCamera.ScreenPointToRay(inputPosition);
-        if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.tag == "Draggable")
+        if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("Draggable"))
         {
             draggedObject = hit.collider.gameObject;
-
-            // Store the initial Z position of the object when drag starts
             initialZPosition = mainCamera.WorldToScreenPoint(draggedObject.transform.position).z;
             isHolding = true;
+            SetReceiverColors(HoldColor);
         }
     }
 
     private void EndHold()
     {
         isHolding = false;
-        if (draggedObject != null)
+        draggedObject = null;
+        SetReceiverColors(notHoldColor);
+    }
+
+    private void SetReceiverColors(Color color)
+    {
+        foreach (var rec in receiver)
         {
+            if (!rec.isTriggered)
+            {
+                Renderer renderer = rec.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderer.material.color = color;
+                }
+            }
         }
-        draggedObject = null; // Stop dragging the object
     }
 }

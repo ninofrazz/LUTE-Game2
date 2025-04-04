@@ -133,8 +133,6 @@ GameObject:
   - component: {fileID: 7386714013354889620}
   - component: {fileID: 5008543885649570005}
   - component: {fileID: 9102964789176220927}
-  - component: {fileID: 2731448055376095619}
-  - component: {fileID: 2785863056673202205}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -302,55 +300,6 @@ MonoBehaviour:
   m_InputActionReferences: {fileID: 11400000, guid: b34b164b5e4903e4a941de3835062e79, type: 2}
   m_ARRaycastHitEvent: {fileID: 11400000, guid: 503648b3444113b4896ceded8c86c177, type: 2}
   m_TrackableType: 1
---- !u!114 &2731448055376095619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305767977646141554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 956dd6cf70eaca449a45b6a95b96c8c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CameraToFace: {fileID: 0}
-  m_ObjectPrefabs: []
-  m_SpawnVisualizationPrefab: {fileID: 0}
-  m_SpawnOptionIndex: -1
-  m_OnlySpawnInView: 1
-  m_ViewportPeriphery: 0.15
-  m_ApplyRandomAngleAtSpawn: 1
-  m_SpawnAngleRange: 45
-  m_SpawnAsChildren: 0
---- !u!114 &2785863056673202205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305767977646141554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba63293f961b46a1a5b648e4ba02cfb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ARInteractorObject: {fileID: 4515927828376876933}
-  m_ObjectSpawner: {fileID: 2731448055376095619}
-  m_RequireHorizontalUpSurface: 0
-  m_SpawnTriggerType: 0
-  m_SpawnAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Spawn
-      m_Type: 1
-      m_ExpectedControlType: 
-      m_Id: 9d001a3a-55bc-4918-b32b-251b677276b2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!1 &4981096788378851643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,17 +2378,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8368e22916199b4cb491c95235f9e3c, type: 3}
---- !u!114 &4515927828376876933 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6605111590819766852, guid: b8368e22916199b4cb491c95235f9e3c, type: 3}
-  m_PrefabInstance: {fileID: 7278342091423667649}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4515927828376876938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6605111590819766859, guid: b8368e22916199b4cb491c95235f9e3c, type: 3}

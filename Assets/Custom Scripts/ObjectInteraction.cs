@@ -176,7 +176,7 @@ public class ObjectInteraction : MonoBehaviour
         // Additional logic for LevelComplete
         if (FlowerSpawned)
         {
-            FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
+            //FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
             scanText.SetActive(false);
 
             FlowerSpawnToggled = true;

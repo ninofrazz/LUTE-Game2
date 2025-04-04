@@ -19,10 +19,14 @@ public class FloorSpawner : MonoBehaviour
     private List<GameObject> placedFlowers = new List<GameObject>(); // List to track placed flowers
     private bool flowersPlaced = false; // Flag to track if flowers have been placed
 
+    public GameObject Trackables;
+
     private void OnEnable()
     {
         // Subscribe to the planesChanged event
         planeManager_.planesChanged += OnPlanesChanged;
+
+        Trackables = GameObject.Find("Trackables");
     }
 
     private void OnDisable()
@@ -137,7 +141,8 @@ public class FloorSpawner : MonoBehaviour
                 Debug.LogError("No flower prefabs assigned!");
             }
         }
-        FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
+        //FindAnyObjectByType<ARPlaneMeshVisualizer>().enabled = false;
+        Trackables.SetActive(false);
         Debug.Log($"Flowers placed randomly on the plane. Total flowers: {flowerQuantity}");
         objectInteractionScript.FlowerSpawned = true;
         FindAnyObjectByType<GlobalVariableComm>().Completed();

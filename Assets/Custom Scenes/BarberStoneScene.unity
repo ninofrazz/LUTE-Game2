@@ -386,6 +386,7 @@ MonoBehaviour:
   SolvePuzzle: {fileID: 235481398}
   FloorScanner: {fileID: 1709356629}
   flowerGrowth: {fileID: 0}
+  dragAndDropReceivers: []
   testAllInstances: []
 --- !u!114 &774399018
 MonoBehaviour:
@@ -674,6 +675,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4.0167603
       objectReference: {fileID: 0}
+    - target: {fileID: 1319492349515202634, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.926025
+      objectReference: {fileID: 0}
     - target: {fileID: 1980921901246417548, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 0
@@ -690,6 +695,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2503467268563437094, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.926025
+      objectReference: {fileID: 0}
     - target: {fileID: 2721085993137068105, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -698,9 +707,49 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3352697237658981649, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352697237658981649, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352697237658981649, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352697237658981649, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352697237658981649, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 3799426928523317000, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282540228029885587, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282540228029885587, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282540228029885587, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282540228029885587, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.773505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282540228029885587, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 5320415011860702350, guid: 6d29f654c655eba4285bb21579ab5dab, type: 3}
       propertyPath: m_Pivot.x
@@ -1053,6 +1102,7 @@ MonoBehaviour:
   - {fileID: 1601194081727426, guid: d1ab1c753495e5b4a8f0bd4f6e3bfc35, type: 3}
   flowerSpacing: 1
   flowerQuantity: 70
+  Trackables: {fileID: 0}
 --- !u!4 &1996040800
 Transform:
   m_ObjectHideFlags: 0
