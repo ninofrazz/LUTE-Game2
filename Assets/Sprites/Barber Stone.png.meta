@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Barber Stone_0: 8118122760177058576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

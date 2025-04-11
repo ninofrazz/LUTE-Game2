@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dove_Icon_White_0: 7221767393100055636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

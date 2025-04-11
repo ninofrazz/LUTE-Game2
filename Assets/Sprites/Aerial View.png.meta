@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Aerial View_0: 5945665876302034535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

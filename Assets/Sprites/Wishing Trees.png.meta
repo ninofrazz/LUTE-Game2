@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wishing Trees_0: -510226317165624087
+      Wishing Trees_1: 8358749330753051029
+      Wishing Trees_2: -957274356634952927
+      Wishing Trees_3: 8811476741567318376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

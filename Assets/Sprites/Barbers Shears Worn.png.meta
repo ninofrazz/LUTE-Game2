@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Barbers Shears Worn_0: 6216755075852555247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -100,8 +100,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _GrowthMask: 1
-    - _GrowthScale: 1.3
+    - _GrowthMask: 0.999143
+    - _GrowthScale: 1.2997428
     - _IsTranslucent: 1
     - _LOD_FADE_CROSSFADE: 0
     - _Metallic: 0

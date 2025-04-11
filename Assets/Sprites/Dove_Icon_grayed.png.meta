@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dove_Icon_grayed_0: -6031786255172971003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

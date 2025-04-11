@@ -46,8 +46,6 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 21300000, guid: 05b5da08aa4cec54684ebe4a7b756c43, type: 3}
     duration: 2
-  - logo: {fileID: 1310270320375162423, guid: 8a1f96c93a153e34a98b5f6dd6bbfebd, type: 3}
-    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -148,7 +146,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.0.1
+  bundleVersion: 0.3
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
