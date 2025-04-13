@@ -389,7 +389,7 @@ MonoBehaviour:
   SolvePuzzle: {fileID: 1683213195}
   FloorScanner: {fileID: 1709356629}
   flowerGrowth: {fileID: 0}
-  dragAndDropReceiver: {fileID: 0}
+  dragAndDropReceivers: []
   testAllInstances: []
 --- !u!114 &774399018
 MonoBehaviour:
@@ -1055,6 +1055,7 @@ MonoBehaviour:
   - {fileID: 1601194081727426, guid: d1ab1c753495e5b4a8f0bd4f6e3bfc35, type: 3}
   flowerSpacing: 1
   flowerQuantity: 60
+  Trackables: {fileID: 0}
 --- !u!4 &1996040800
 Transform:
   m_ObjectHideFlags: 0

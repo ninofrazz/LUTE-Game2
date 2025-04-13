@@ -40,7 +40,7 @@ public class ObjectInteraction : MonoBehaviour
 
         // Initialize UI elements
         completeText.SetActive(false);
-        goBackButton.SetActive(false);
+        goBackButton.SetActive(true);
         FlowerButton.SetActive(false);
         _uiToggled = false; // Reset the toggle flag
 

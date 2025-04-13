@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHolding: 0
   draggedObject: {fileID: 0}
+  receiver: []
   HoldColor: {r: 1, g: 0.49134412, b: 0, a: 0.39215687}
   notHoldColor: {r: 1, g: 0.99361414, b: 0, a: 0.39215687}
 --- !u!114 &2258268727313013709
@@ -204,8 +205,8 @@ Transform:
   m_GameObject: {fileID: 7805207036834947853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.57, y: 0.045415267, z: 3}
-  m_LocalScale: {x: 6.1090508, y: 6.1090508, z: 6.1090508}
+  m_LocalPosition: {x: 1.18, y: 0, z: 0.65}
+  m_LocalScale: {x: 1.3491244, y: 1.3491244, z: 1.3491244}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8986584663889320703}
@@ -337,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4972cd08a92fb24bbc17104ceebaa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  radius: 0.5
   gizmoColor: {r: 1, g: 0, b: 0.9070883, a: 1}
 --- !u!1 &7859743497592048733
 GameObject:
@@ -368,8 +369,8 @@ Transform:
   m_GameObject: {fileID: 7859743497592048733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.045415267, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.17073, y: 0.408, z: 0.65}
+  m_LocalScale: {x: 0.22084028, y: 0.22084028, z: 0.22084028}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1589326386216625054}
@@ -443,6 +444,7 @@ MonoBehaviour:
   - {fileID: 3492909352259758967}
   - {fileID: 251499379896201947}
   Hit: 0
+  mouseHoldHandlerscript: {fileID: 0}
 --- !u!114 &4841801276852551622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4972cd08a92fb24bbc17104ceebaa7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 0.5
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &6540542412057201460
 PrefabInstance:

@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2682839179395233478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.045415267, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.464, y: 0.38, z: 0.97112}
+  m_LocalScale: {x: 0.46505553, y: 0.46956652, z: 0.46505553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8647337854415333337}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: ce3edd96d4ab9814491b3909c0ae5782, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -187,8 +187,8 @@ Transform:
   m_GameObject: {fileID: 6172670022716044536}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0.045415267, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.96403, y: 0.38, z: -0.97112}
+  m_LocalScale: {x: 0.46505553, y: 0.46956652, z: 0.46505553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3033478490989984857}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: ce3edd96d4ab9814491b3909c0ae5782, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -294,8 +294,8 @@ Transform:
   m_GameObject: {fileID: 6836166824831482561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.045415267, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.80214, y: 0.38, z: 0.97112}
+  m_LocalScale: {x: 0.46505553, y: 0.46956652, z: 0.46505553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8413238099995756733}
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: ce3edd96d4ab9814491b3909c0ae5782, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -401,8 +401,8 @@ Transform:
   m_GameObject: {fileID: 8249196461109318745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0.045415267, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.464, y: 0.38, z: -0.97112}
+  m_LocalScale: {x: 0.46505553, y: 0.46956652, z: 0.46505553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7301609296371387653}
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: ce3edd96d4ab9814491b3909c0ae5782, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0

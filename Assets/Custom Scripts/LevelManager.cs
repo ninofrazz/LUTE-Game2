@@ -32,13 +32,21 @@ namespace Mapbox.Unity.Map
                 IImageryLayer imageryLayer = map.ImageLayer;
 
                 // Set the style URL using the extension method
-                map.ImageLayer.SetLayerSource(mapComplete);
+
+                // ChangeMap();
             }
             else
             {
                 map.ImageLayer.SetLayerSource(mapIncomplete);
             }
         }
+
+        public void ChangeMap()
+        {
+
+            map.ImageLayer.SetLayerSource(mapComplete);
+        }
+
         public void LoadScene_Nino(int sceneIndex)
         {
             SceneManager.LoadScene(sceneIndex);

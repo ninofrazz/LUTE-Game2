@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2682839179395233478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0.045415267, z: 7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.66183, y: 0.4048, z: 0.63211}
+  m_LocalScale: {x: 0.28769022, y: 0.28769022, z: 0.28769022}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8647337854415333337}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: 3790464856b6c884eafb0b1e6c91af2e, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -207,8 +207,8 @@ Transform:
   m_GameObject: {fileID: 6489794794411634094}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.3236, y: 0.39479, z: 0.19087}
+  m_LocalScale: {x: 0.28769022, y: 0.28769022, z: 0.28769022}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519930652596264949}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: 3790464856b6c884eafb0b1e6c91af2e, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -314,8 +314,8 @@ Transform:
   m_GameObject: {fileID: 6836166824831482561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.045415267, z: 7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.66183, y: 0.4048, z: 0.63211}
+  m_LocalScale: {x: 0.28769022, y: 0.28769022, z: 0.28769022}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8413238099995756733}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: 3790464856b6c884eafb0b1e6c91af2e, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0
@@ -531,8 +531,8 @@ Transform:
   m_GameObject: {fileID: 8157686062548727724}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7072033, y: 0.70701027, z: 0.0000021010637, w: 0.000001937151}
-  m_LocalPosition: {x: 0, y: -1.71, z: 2.9775307}
-  m_LocalScale: {x: 2.6548262, y: 2.6548262, z: 2.6548262}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0.56}
+  m_LocalScale: {x: 0.53132474, y: 0.53132474, z: 0.53132474}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8986584663889320703}
@@ -695,8 +695,8 @@ Transform:
   m_GameObject: {fileID: 8747610397583250171}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7072033, y: 0.70701027, z: 0.0000021010637, w: 0.000001937151}
-  m_LocalPosition: {x: -0.0012397766, y: 1.0965271, z: 2.9775455}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00024812, y: 0.55475, z: 0.59}
+  m_LocalScale: {x: 0.26806143, y: 0.26806143, z: 0.26806143}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7094946290896975222}
@@ -814,8 +814,8 @@ Transform:
   m_GameObject: {fileID: 8929722061186489468}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.3236, y: 0.39479, z: 0.19087}
+  m_LocalScale: {x: 0.28769022, y: 0.28769022, z: 0.28769022}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 260138957673539225}
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInteraction: {fileID: 0}
   counterText: {fileID: 0}
-  radialBarPrefab: {fileID: 1795065447611863669, guid: 9dc555cfd065126438292fc130eb39da, type: 3}
+  radialBarPrefab: {fileID: 1795065447611863669, guid: 3790464856b6c884eafb0b1e6c91af2e, type: 3}
   duration: 10
   Triggered: 0
   canContinue: 0

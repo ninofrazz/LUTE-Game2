@@ -106,8 +106,10 @@ public class SpawnAreasOnMap : MonoBehaviour
         showAreas = true;
 
     }
-
-
+    void ShowNodeComplete()
+    {
+        flowEngineGlobal.ExecuteNode("Node Complete");
+    }
 
     private void CreateSpriteOverlay(int index)
     {
@@ -182,6 +184,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea0") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -212,6 +215,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea1") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -241,6 +245,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea2") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -270,6 +275,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea3") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -299,6 +305,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea4") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -328,6 +335,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea5") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -357,6 +365,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea6") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
@@ -386,6 +395,7 @@ public class SpawnAreasOnMap : MonoBehaviour
                         !flowEngineGlobal.GetBooleanVariable("LoadArea7") &&
                         !Mathf.Approximately(currentAlpha, 0.7f))
                     {
+                        ShowNodeComplete();
                         renderer.material.color = new Color(1, 1, 1, newAlpha);
 
                         if (Mathf.Approximately(newAlpha, 0.7f))
