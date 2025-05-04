@@ -5,10 +5,14 @@ public class DragAndDropReceiver : MonoBehaviour
     public bool isTriggered;
     public Color objectColor;
 
+    private ObjectInteraction script_objectInteraction;
+
     private void Start()
     {
         // Cache the initial color of the receiver object
         objectColor = GetComponent<Renderer>().material.color;
+
+        script_objectInteraction = FindAnyObjectByType<ObjectInteraction>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +36,8 @@ public class DragAndDropReceiver : MonoBehaviour
             if (hitChecker != null)
             {
                 hitChecker.Hit = true;
+
+                script_objectInteraction.PlayBingSound();
             }
             else
             {

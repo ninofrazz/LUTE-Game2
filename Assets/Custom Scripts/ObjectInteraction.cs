@@ -28,6 +28,8 @@ public class ObjectInteraction : MonoBehaviour
     private bool FlowerSpawnToggled;
     private bool solvePuzzleActivated = false; // Track if SolvePuzzle has been activated
 
+    public AudioSource sound_bing;
+
     public HitChecker[] testAllInstances;
     private void Start()
     {
@@ -110,7 +112,9 @@ public class ObjectInteraction : MonoBehaviour
                 if (hitCheckerScript != null)
                 {
                     hitCheckerScript.Hit = true;
-                    // Change the color from here
+
+                    PlayBingSound();
+
                 }
             }
         }
@@ -207,6 +211,15 @@ public class ObjectInteraction : MonoBehaviour
             }
 
 
+    }
+
+    public void PlayBingSound()
+    {
+        // Adjust pitch based on the number of hit instances
+        int hitCount = testAllInstances.Count(h => h.Hit);
+        sound_bing.pitch = 0.5f + 0.1f * hitCount; // You can adjust the multiplier
+
+        sound_bing.Play();
     }
 
     void ToggleUIElements(bool state)
